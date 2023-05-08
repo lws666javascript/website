@@ -1,18 +1,16 @@
 //获取元素
-try{let userInput = document.querySelector("#UserInput"),
+let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
 userSubmit.addEventListener("click",function(){
-  try{
   let v = userInput.value;
   let iframe = document.creatElement("iframe");
   iframe.src = v;
   iframe.className = "adding-iframe center";
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
-      }catch(e)alert(e)
 })
-function createCloseBtn(e){try{
+function createCloseBtn(e){
   let c = document.createElement("div");
   c.innerHTML = "关闭";
   c.className = "closePageButton";
@@ -21,8 +19,4 @@ function createCloseBtn(e){try{
     e.remove();
     c.remove();
   });
-    }catch(e)alert(e)
-}
-}catch(e){
-alert(e)
 }
