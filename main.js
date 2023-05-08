@@ -1,5 +1,5 @@
 //获取元素
-let userInput = document.querySelector("#UserInput"),
+try{let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
 userSubmit.addEventListener("click",function(){
@@ -19,4 +19,7 @@ function createCloseBtn(e){
     e.remove();
     c.remove();
   });
+}
+}catch(e){
+alert(e)
 }
