@@ -7,20 +7,21 @@ userSubmit.addEventListener("click",function(){
   let v = userInput.value;
   let iframe = document.creatElement("iframe");
   iframe.src = v;
-  iframe.class = "adding-iframe center";
+  iframe.className = "adding-iframe center";
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
       }catch(e)alert(e)
 })
-function createCloseBtn(e){
+function createCloseBtn(e){try{
   let c = document.createElement("div");
   c.innerHTML = "关闭";
-  c.class = "closePageButton";
+  c.className = "closePageButton";
   mainPage.appendChild(c);
   c.addEventListener("click",function(){
     e.remove();
     c.remove();
   });
+    }catch(e)alert(e)
 }
 }catch(e){
 alert(e)
