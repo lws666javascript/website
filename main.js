@@ -14,7 +14,7 @@ userSubmit.addEventListener("click",function(){
 //定义函数添加button
 function createCloseBtn(e){
   let c = document.createElement("button");
-  c.innerHTML = "关闭";
+  c.innerHTML = "×";
   c.className = "closePageButton";
   c.style.left = e.offsetLeft + e.offsetWidth - c.offsetWidth + "px";
   c.style.top = e.offsetTop - c.offsetHeight + "px";
