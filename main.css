@@ -22,7 +22,7 @@
 
 /*Element Style*/
 h1{
-  font-size:80px;
+  font-size:60px;
 }
 #mainPage{
   width:90%;
@@ -31,4 +31,7 @@ h1{
   border-radius:50px;
   margin:auto;
   background-color:cyan;
+}
+.adding-iframe{
+  
 }
