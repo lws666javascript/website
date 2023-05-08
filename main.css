@@ -33,5 +33,8 @@ h1{
   background-color:cyan;
 }
 .adding-iframe{
+  width:80%;
+  height:60%;
+  border:2px solid black;
   
 }
