@@ -7,8 +7,11 @@
     <div id="mainPage">
       <input id="UserInput"><button id="UserSubmit">提交</button>
     </div>
-    <button onclick="history.back()">返回</button>
-    <button id="viewScore">查看源码</button>
+    <div id="tools">
+      <button onclick="history.back()">返回</button>
+      <button id="viewScore">查看源码</button>
+      <button id="ConsoleCode" onclick="eval(prompt('输入调试代码'))">调试代码</div>
+    </div>
     <script>
       function welcome(){
       let test = prompt("你知道该网站的作者(拼音缩写)是谁吗？");
