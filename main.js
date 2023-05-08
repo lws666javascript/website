@@ -25,6 +25,6 @@ function createCloseBtn(e){
   });
 }
 document.querySelector("#viewScore").addEventListener("click",function(){
-  let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;\n");
   mainPage.innerHTML = text;
 })
