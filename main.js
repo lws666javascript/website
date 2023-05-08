@@ -1,8 +1,8 @@
-alert("Run!");
 //获取元素
 let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
+//绑定事件添加iframe
 userSubmit.addEventListener("click",function(){
   let v = userInput.value;
   let iframe = document.creatElement("iframe");
@@ -11,6 +11,7 @@ userSubmit.addEventListener("click",function(){
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
 })
+//定义函数添加button
 function createCloseBtn(e){
   let c = document.createElement("button");
   c.innerHTML = "关闭";
@@ -24,7 +25,7 @@ function createCloseBtn(e){
   });
 }
 document.querySelector("#viewScore").addEventListener("click",function(){
-  let text = document.documentElement.outerHTML.replace(/</g,"&lt;");
+  let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;")
   alert(text)
   mainPage.innerHTML = text.replace(/>/g,"&gt;");
 })
