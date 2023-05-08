@@ -6,7 +6,7 @@ userSubmit.addEventListener("click",function(){
   let v = userInput.value;
   let iframe = document.creatElement("iframe");
   iframe.src = v;
-  iframe.class = "adding-iframe";
+  iframe.class = "adding-iframe center";
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
 })
