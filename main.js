@@ -3,12 +3,14 @@ try{let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
 userSubmit.addEventListener("click",function(){
+  try{
   let v = userInput.value;
   let iframe = document.creatElement("iframe");
   iframe.src = v;
   iframe.class = "adding-iframe center";
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
+      }catch(e)alert(e)
 })
 function createCloseBtn(e){
   let c = document.createElement("div");
