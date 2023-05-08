@@ -1,5 +1,39 @@
 <html>
+  <style>
+    .color-sharking{
+      animation:text-color-change 1s infinite;
+    }
+    @keyframes text-color-change{
+      from{color:red;}
+      50%{color:green;}
+      to{color:blue;}
+    }
+  </style>
   <body>
-      <button onclick="history.back()">返回</button>
-      <script>alert("Hello World!")</script>
+    <h1 class="color-sharking">LWS's 网站---欢迎光临！！！</h1>
+    <inframe></inframe>
+    <button onclick="history.back()">返回</button>
+    <script>
+      function welcome(){
+      let test = prompt("你知道该网站的作者(拼音缩写)是谁吗？");
+      if(test === "lws"){
+        alert("欢迎光临！！！")
+      }else{
+        if(confirm("Are you sure???")){
+          alert("Good!I will punish you!!!");
+          if(confirm("Are you ready?")){
+            alert("Ok,let\'s go!")
+            while(true)alert("你能靠手速退出网站吗，小蔡鸡？")
+          }else{
+            alert("可惜你没机会了");
+            while(true)alert("忏悔吧！！！")
+          }
+        }else{
+          alert("那就重来吧！")
+          welcome()
+        }
+      }
+      }
+      welcome()
+    </script>
   </body>
