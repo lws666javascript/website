@@ -15,6 +15,8 @@ function createCloseBtn(e){
   let c = document.createElement("button");
   c.innerHTML = "关闭";
   c.className = "closePageButton";
+  c.style.left = e.offsetLeft + e.offsetWidth - c.offsetWidth + "px";
+  c.style.top = e.offsetTop - c.offsetHeight + "px";
   mainPage.appendChild(c);
   c.addEventListener("click",function(){
     e.remove();
