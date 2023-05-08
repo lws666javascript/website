@@ -39,8 +39,8 @@ h1{
   z-index:258;
 }
 .closePageButton{
-  width:100px;
-  height:100px;
+  width:70px;
+  height:70px;
   position:absolute;
   color:red;
   text-align:center;
@@ -48,5 +48,6 @@ h1{
   border:2px solid black;
   border-radius:50%;
   font-size:50px;
+  font-weight:bold;
   z-index:259;
 }
