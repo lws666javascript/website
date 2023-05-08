@@ -2,7 +2,7 @@
   text-align:center;
   line-height:100%;
 }
-.color-sharking{
+.text-color-sharking{
   animation:sharking-color-change 0.8s infinite;
   background-color:black;
 }
