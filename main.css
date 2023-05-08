@@ -13,9 +13,14 @@
 }
 
 /*Element Style*/
+h1{
+  font-size:80px;
+}
 #mainPage{
-  width:80%;
+  width:90%;
   height:60%;
-  border:5px solid black;
+  border:3px solid black;
   border-radius:50px;
+  margin:auto;
+  background-color:cyan;
 }
