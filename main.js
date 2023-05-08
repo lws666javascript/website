@@ -12,7 +12,7 @@ userSubmit.addEventListener("click",function(){
   createCloseBtn(iframe);
 })
 function createCloseBtn(e){
-  let c = document.createElement("div");
+  let c = document.createElement("button");
   c.innerHTML = "关闭";
   c.className = "closePageButton";
   mainPage.appendChild(c);
