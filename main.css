@@ -14,5 +14,8 @@
 
 /*Element Style*/
 #mainPage{
-  
+  width:80%;
+  height:60%;
+  border:1px solid black;
+  border-radius:50px;
 }
