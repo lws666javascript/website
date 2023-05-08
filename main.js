@@ -23,5 +23,6 @@ function createCloseBtn(e){
 }
 document.querySelector("#viewScore").addEventListener("click",function(){
   let text = document.documentElement.outerHTML.replace(/</g,"&lt;");
+  alert(text)
   mainPage.innerHTML = text.replace(/>/g,"&gt;");
 })
