@@ -1,0 +1,7 @@
+.text-align-center{
+  text-align:center;
+  line-height:100%;
+}
+@keyframes color-change{
+  
+}
