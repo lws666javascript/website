@@ -5,7 +5,7 @@ let userInput = document.querySelector("#UserInput"),
 //绑定事件添加iframe
 userSubmit.addEventListener("click",function(){
   let v = userInput.value;
-  let iframe = document.creatElement("iframe");
+  let iframe = document.createElement("iframe");
   iframe.src = "http://" + v;
   iframe.className = "adding-iframe center";
   mainPage.appendChild(iframe);
