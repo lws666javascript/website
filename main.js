@@ -20,3 +20,6 @@ function createCloseBtn(e){
     c.remove();
   });
 }
+document.querySelector("#viewScore").addEventListener("click",function(){
+  mainPage.innerHTML = document.documentHTML.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;")
+})
