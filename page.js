@@ -11,11 +11,11 @@ class page{
     let e = document.createElement("div");
     e.className = "adding-iframe-page center";
     p.appendChild(e);
-    this.bind();
-    this.createIframe();
-    this.createTools();
     this.page = e;
     let page = this.page;
+    this.bind();
+    this.createIframe();
+    this.createTools(p);
     return this;
   }
   render(){
@@ -68,6 +68,8 @@ class page{
   createCloseBtn(p){
     let b = document.createElement("div");
     b.className = "closePageButton";
+    b.style.width = b.offsetHeight + "px";
+    b.style.fontSize = b.offsetHeight * 0.8 + "px";
     p.appendChild(b);
     let page = this.page;
     b.addEventListener("click",function(e){
