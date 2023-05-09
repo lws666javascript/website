@@ -6,9 +6,10 @@ class page{
     this.tools = null;
   }
   show(p){
-    let i = document.createElement("iframe");
-    i.url = this.url;
-    i.className = ""
+    let e = document.createElement("div");
+    e.className = "adding-iframe-page center";
+    p.appendChild(e);
+    this.ele.page = e;
   }
   render({url,dir,size}){
     this.url = url;
@@ -21,6 +22,12 @@ class page{
   }
   bind(){
   
+  }
+  createIframe(){
+    let i = document.createElement("iframe");
+    i.className = "adding-iframe";
+    this.ele.page.appendChild(i);
+    
   }
   createTools(){
   
