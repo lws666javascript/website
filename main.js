@@ -25,14 +25,14 @@ function createCloseBtn(e){
   });
 }
 document.querySelector("#viewScore").addEventListener("click",function(e){
-  let storage = mainPage.innerHTML;
   let f = e.target;
   let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;\n&#32;&#32;");
   if(!f.viewState){
+    f.viewScoreStorage = mainPage.innerHTML;
     mainPage.innerHTML = text;
     f.viewState = 1;
   }else{
-    mainPage.innerHTML = storage;
+    mainPage.innerHTML = f.viewScoreStorage;
     f.viewState = 0;
   }
-})
+});
