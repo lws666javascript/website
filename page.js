@@ -24,11 +24,13 @@ class page{
     p.style.top = this.dir[1];
     p.style.width = this.size[0];
     p.style.height  = this.size[1];
+    return  this;
   }
   change({url,dir,size}){
     this.url = url || this.url;
     this.dir = dir || this.dir;
     this.size = size || this.size;
+    return  this;
   }
   bind(){
     
@@ -44,8 +46,13 @@ class page{
   createTools(){
     
   }
-  createCloseBtn(){
+  createCloseBtn(p){
     let b = document.createElement("div");
-    b.className = ""
+    b.className = "closePageButton";
+    p.appendChild(b);
+    b.addEventListener("click",function(e){
+      p.remove();
+      b.remove();
+    });
   }
 }
