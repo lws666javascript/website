@@ -60,8 +60,9 @@ class page{
     b.className = "pageChangeBox";
     b.innerHTML = `
       <input placeholder="url" class="pageURL">
+      <button class="pageURLSetBtn">修改地址</button>
       <input placeholder="请输入长度和宽度（用,相隔）" class="pageSize">
-      <button class="pageChangeBtn">修改</button>`;
+      <button class="pageChangeBtn">修改大小</button>`;
     p.appendChild(b)
     
   }
