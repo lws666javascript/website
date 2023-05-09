@@ -72,6 +72,6 @@ h1{
   border:2px solid black;
   border-radius:50%;
   font-weight:bold;
-  position:relative;
+  position:absolute;
   right:0;
 }
