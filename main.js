@@ -16,15 +16,23 @@ function createCloseBtn(e){
   let c = document.createElement("button");
   c.innerHTML = "×";
   c.className = "closePageButton";
+  mainPage.appendChild(c);
   c.style.left = e.offsetLeft + e.offsetWidth - c.offsetWidth + "px";
   c.style.top = e.offsetTop - c.offsetHeight + "px";
-  mainPage.appendChild(c);
   c.addEventListener("click",function(){
     e.remove();
     c.remove();
   });
 }
-document.querySelector("#viewScore").addEventListener("click",function(){
+document.querySelector("#viewScore").addEventListener("click",function(e){
+  let storage = mainPage.innerHTML;
+  let f = e.target;
   let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;\n&#32;&#32;");
-  mainPage.innerHTML = text;
+  if(!f.viewState){
+    mainPage.innerHTML = text;
+    f.viewState = 1;
+  }else{
+    mainPage.innerHTML = storage;
+    f.viewState = 0;
+  }
 })
