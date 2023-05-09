@@ -32,6 +32,9 @@ h1{
   margin:auto;
   background-color:cyan;
 }
+#viewScorePage{
+  display:none;
+}
 .adding-iframe{
   width:80%;
   height:80%;
