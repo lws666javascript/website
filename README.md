@@ -1,2 +1,2 @@
 # jspvz
-# https://lws666javascript.github.io/jspvz/ my website
+# (https://lws666javascript.github.io/jspvz/)my website
