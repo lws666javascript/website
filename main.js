@@ -5,7 +5,8 @@ let userInput = document.querySelector("#UserInput"),
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
-    alert(eval(prompt("调试代码")));
+    let a = eval(prompt("调试代码"));
+    alert(a);
   }catch(e){
     alert(e)
   }
