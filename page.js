@@ -43,8 +43,12 @@ class page{
     this.iframe = i;
     return  this;
   }
-  createTools(){
-    
+  createTools(p){
+    let d = document.createElement("div");
+    d.className = "pageTools";
+    p.appendChild(d);
+    this.createCloseBtn(d);
+    this.createChangeBox(d);
   }
   createCloseBtn(p){
     let b = document.createElement("div");
