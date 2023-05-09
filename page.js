@@ -12,8 +12,8 @@ class page{
     e.className = "adding-iframe-page center";
     p.appendChild(e);
     this.bind();
-    createIframe();
-    createTools();
+    this.createIframe();
+    this.createTools();
     this.page = e;
     let page = this.page;
     return this;
@@ -31,7 +31,7 @@ class page{
     this.url = url || this.url;
     this.dir = dir || this.dir;
     this.size = size || this.size;
-    render();
+    this.render();
     return this;
   }
   bind(){
