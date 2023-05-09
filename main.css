@@ -65,14 +65,12 @@ h1{
   left:0;
 }
 .closePageButton{
-  width:10%;
   height:100%;
   color:red;
   text-align:center;
   line-height:100%;
   border:2px solid black;
   border-radius:50%;
-  font-size:50px;
   font-weight:bold;
   position:relative;
   right:0;
