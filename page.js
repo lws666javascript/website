@@ -31,7 +31,7 @@ class page{
     this.size = size || this.size;
   }
   bind(){
-  
+    
   }
   createIframe(){
     let i = document.createElement("iframe");
@@ -44,5 +44,8 @@ class page{
   createTools(){
     
   }
-  
+  createCloseBtn(){
+    let b = document.createElement("div");
+    b.className = ""
+  }
 }
