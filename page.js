@@ -55,4 +55,14 @@ class page{
       b.remove();
     });
   }
+  createChangeBox(p){
+    let b = document.createElement("div");
+    b.className = "pageChangeBox";
+    b.innerHTML = `
+      <input placeholder="url" class="pageURL">
+      <input placeholder="请输入长度和宽度（用,相隔）" class="pageSize">
+      <button class="pageChangeBtn">修改</button>`;
+    p.appendChild(b)
+    
+  }
 }
