@@ -3,7 +3,7 @@ let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
 //调试按钮
-document.querySelector("#ConsoleButton").addEventListener("click",function(){
+document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
     alert(eval(prompt("调试代码")));
   }catch(e){
