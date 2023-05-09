@@ -2,6 +2,14 @@
 let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage");
+//调试按钮
+document.querySelector("#ConsoleButton").addEventListener("click",function(){
+  try{
+    alert(eval(prompt("调试代码")));
+  }catch(e){
+    alert(e)
+  }
+})
 //绑定事件添加iframe
 userSubmit.addEventListener("click",function(){
   let v = userInput.value;
