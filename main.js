@@ -27,8 +27,8 @@ userSubmit.addEventListener("click",function(){
       h = body.offsetHeight;
   let page = new Page({
     url:v,
-    size:[w * 0.8,h * 0.8],
-    dir:[w * 0.1,h * 0.1]
+    size:[w * 0.9,h * 0.9],
+    dir:[w * 0.05,h * 0.05]
   });
   page.show(document.body);
 })
