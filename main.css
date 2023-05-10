@@ -86,12 +86,12 @@ h1{
 }
 .pageChangeBox input{
   width:30%;
-  height:80%;
+  height:50%;
   display:table;
 }
 .pageChangeBox button{
   width:30%;
-  height:80%;
+  height:50%;
   diaplay:table;
   font-size:25px;
 }
