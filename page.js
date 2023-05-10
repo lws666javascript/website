@@ -1,5 +1,4 @@
-document.querySelector("#viewScore").onclick=function(){alert("go")
-try{class Page{
+class Page{
   constructor({url,dir,size}){
     this.url = url;
     this.dir = dir || [];
@@ -77,7 +76,6 @@ try{class Page{
     b.addEventListener("click",function(e){
       page.remove();
       b.remove();
-      delete _this;
     });
     return b;
   }
@@ -102,4 +100,4 @@ try{class Page{
     });
     return b;
   }
-}}catch(e){alert(e)}}
+}
