@@ -1,5 +1,5 @@
 alert("go")
-/*try{class Page{
+try{class Page{
   constructor({url,dir,size}){
     this.url = url;
     this.dir = dir || [];
@@ -103,4 +103,4 @@ alert("go")
     return b;
   }
 console.log(Page)
-    }catch(e){console.log(e)}*/
+    }catch(e){alert(e)}
