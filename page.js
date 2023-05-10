@@ -58,11 +58,11 @@ class Page{
       let t = _this.tools;
       if(!t.hiddenState){
         t.tools.style.display = "none";
-        _this.iframe.style.height = "100%";
+        //_this.iframe.style.height = "100%";
         t.hiddenState = 1;
       }else{
         t.tools.style.display = "block";
-        _this.iframe.style.height = "90%";
+        //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
       }
     })
