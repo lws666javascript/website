@@ -45,7 +45,9 @@ class page{
         let x = beginDir[0],
             y = beginDir[1];
         let addtion = [t.pageX - x,t.pageY - y];
+        console.log(addition)
         let dir = [_this.dir[0] + addtion[0],_this.dir[1] + addtion[1]];
+        console.log(dir)
         _this.change({dir});
       });
     });
