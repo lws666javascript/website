@@ -46,7 +46,8 @@ class Page{
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
       p.addEventListener("touchmove",function(e){
         let t = e.touches[0];
-        let dir = [e.pageX - addition[0],e.pageY - addition[1]];
+        let dir = [t.pageX - addition[0],t.pageY - addition[1]];
+        console.log(dir)
         _this.change({dir});
       });
     });
