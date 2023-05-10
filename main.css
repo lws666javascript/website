@@ -56,7 +56,9 @@ h1{
   height:15%;
   border-bottom:2px solid black;
   position:absolute;
+  display:flex;
   top:0;
+  right:0;
 }
 .pageChangeBox{
   width:50%;
@@ -74,4 +76,5 @@ h1{
   font-weight:bold;
   position:absolute;
   right:0;
+  top:0;
 }
