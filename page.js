@@ -71,10 +71,12 @@ class page{
     b.className = "closePageButton";
     b.innerHTML = "×";
     p.appendChild(b);
-    let page = this.page;
+    let page = this.page,
+        _this = this;
     b.addEventListener("click",function(e){
       page.remove();
       b.remove();
+      delete _this;
     });
     return b;
   }
