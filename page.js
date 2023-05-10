@@ -93,12 +93,12 @@ class page{
         size = b.querySelector(".pageSize"),
         btn = b.querySelector(".pageChangeBtn");
     url.vaule = this.url;
-    size.value = this.size;
+    size.value = this.size.join(",");
     let _this = this;
     b.addEventListener("click",function(){
       _this.change({
         url:url.value,
-        size:size.value
+        size:size.value.split(",")
       });
     });
     return b;
