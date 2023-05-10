@@ -60,7 +60,7 @@
     <div class="back" onclick="history.back()">←</div>
     <script src="../page.js">
     <script>
-      document.onclick = function(e){
+      document.body.onclick = function(e){
         let t = e.target,
             b = document.body;
         if(t.tagName === "a"){
