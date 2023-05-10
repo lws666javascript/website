@@ -38,19 +38,28 @@ class Page{
   bind(){
     let p = this.page;
     let _this = this;
-    p.addEventListener("touchstart",function(e){
-      let t = e.touches[0],
-          ele = e.target;
-      let beginDir = [t.pageX,t.pageY];
+    p.addEventListener("mousestart",function(e){
+      let ele = e.target;
+      let beginDir = [e.pageX,e.pageY];
       let beginBDir = [ele.offsetLeft,ele.offsetTop];
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
-      p.addEventListener("touchmove",function(e){
-        let t = e.touches[0];
-        let dir = [t.pageX - addition[0],t.pageY - addition[1]];
-        console.log(dir)
+      p.addEventListener("mousemove",function(e){
+        let dir = [e.pageX - addition[0],e.pageY - addition[1]];
         _this.change({dir});
       });
     });
+    p.addEventListener("dblclick",function(){
+      let t = _this.tools;
+      if(!t.hiddenState){
+        t.tools.style.display = "none";
+        this.iframe.style.height = "100%";
+        t.hiddenState = 1;
+      }else{
+        t.tools.style.display = "block";
+        this.iframe.style.height = "90%";
+        t.hiddenState = 0;
+      }
+    })
   }
   createIframe(p){
     let i = document.createElement("iframe");
@@ -64,6 +73,7 @@ class Page{
     let d = document.createElement("div");
     d.className = "pageTools";
     p.appendChild(d);
+    this.tools.tools = d;
     this.tools.close = this.createCloseBtn(d);
     this.tools.change = this.createChangeBox(d);
   }
@@ -83,14 +93,13 @@ class Page{
   createChangeBox(p){
     let b = document.createElement("div");
     b.className = "pageChangeBox";
-    b.innerHTML = `<input placeholder="url" class="pageURL"><input placeholder="请输入长度和宽度（用,相隔）" class="pageSize"><button class="pageChangeBtn">修改大小</button>`;
+    b.innerHTML = `<input placeholder="url" class="pageURL"><input placeholder="请输入长度和宽度（用,相隔）" class="pageSize"><button class="pageChangeBtn">修改</button>`;
     p.appendChild(b);
     let page = this.page;
     let url = b.querySelector(".pageURL"),
         size = b.querySelector(".pageSize"),
         btn = b.querySelector(".pageChangeBtn");
     url.vaule = this.url;
-    console.log(this.url)
     size.value = this.size.join(",");
     let _this = this;
     b.addEventListener("click",function(){
