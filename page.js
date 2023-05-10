@@ -46,6 +46,7 @@ class page{
             y = beginDir[1];
         let addition = [t.pageX - x,t.pageY - y];
         console.log(addition)
+        console.log(_this.dir)
         let dir = [_this.dir[0] + addition[0],_this.dir[1] + addition[1]];
         console.log(dir)
         _this.change({dir});
