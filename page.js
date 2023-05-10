@@ -101,4 +101,4 @@ class Page{
     });
     return b;
   }
-console.log(page)
+console.log(Page)
