@@ -70,8 +70,6 @@ class page{
     let b = document.createElement("div");
     b.className = "closePageButton";
     b.innerHTML = "×";
-    b.style.width = b.offsetHeight + "px";
-    b.style.fontSize = b.offsetHeight * 0.8 + "px";
     p.appendChild(b);
     let page = this.page;
     b.addEventListener("click",function(e){
@@ -90,6 +88,7 @@ class page{
         size = b.querySelector(".pageSize"),
         btn = b.querySelector(".pageChangeBtn");
     url.vaule = this.url;
+    console.log(url.value)
     size.value = this.size.join(",");
     let _this = this;
     b.addEventListener("click",function(){
