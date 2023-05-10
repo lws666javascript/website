@@ -119,7 +119,7 @@ class Page{
   updateStyle(){
     for(let v of [...arguments]){
       let p = v[0];
-      for(let i of v[1]){
+      for(let i in v[1]){
         p.style[i] = v[1][i];
       }
     }
