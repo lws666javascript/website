@@ -1,3 +1,4 @@
+alert("go")
 try{class Page{
   constructor({url,dir,size}){
     this.url = url;
