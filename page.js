@@ -1,4 +1,4 @@
-alert("go")
+document.querySelector("#viewScore").onclick=function(){alert("go")
 try{class Page{
   constructor({url,dir,size}){
     this.url = url;
@@ -102,4 +102,4 @@ try{class Page{
     });
     return b;
   }
-}}catch(e){alert(e)}
+}}catch(e){alert(e)}}
