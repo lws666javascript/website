@@ -26,6 +26,10 @@ class Page{
     p.style.top = this.dir[1] + "px";
     p.style.width = this.size[0] + "px";
     p.style.height  = this.size[1] + "px";
+    this.updateStyle([this.tools.close,{
+      height:this.tools.close.offsetWidth + "px",
+      fontSize:this.tools.close.offsetWidth * 0.9 + "px";
+    }]);
     return this;
   }
   change({url,dir,size}){
