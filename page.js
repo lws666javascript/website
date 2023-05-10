@@ -1,5 +1,5 @@
 alert("go")
-/*class Page{
+try{class Page{
   constructor({url,dir,size}){
     this.url = url;
     this.dir = dir || [];
@@ -102,4 +102,4 @@ alert("go")
     });
     return b;
   }
-}*/
+}}catch(e){alert(e)}
