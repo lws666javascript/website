@@ -38,7 +38,7 @@ class Page{
   bind(){
     let p = this.page;
     let _this = this;
-    p.addEventListener("mousestart",function(e){
+    p.addEventListener("mousein",function(e){
       let ele = e.target;
       let beginDir = [e.pageX,e.pageY];
       let beginBDir = [ele.offsetLeft,ele.offsetTop];
@@ -52,11 +52,11 @@ class Page{
       let t = _this.tools;
       if(!t.hiddenState){
         t.tools.style.display = "none";
-        this.iframe.style.height = "100%";
+        _this.iframe.style.height = "100%";
         t.hiddenState = 1;
       }else{
         t.tools.style.display = "block";
-        this.iframe.style.height = "90%";
+        _this.iframe.style.height = "90%";
         t.hiddenState = 0;
       }
     })
