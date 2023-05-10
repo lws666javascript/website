@@ -22,10 +22,10 @@ class page{
   render(){
     let p = this.page;
     this.iframe.src = this.url;
-    p.style.left = this.dir[0];
-    p.style.top = this.dir[1];
-    p.style.width = this.size[0];
-    p.style.height  = this.size[1];
+    p.style.left = this.dir[0] + "px";
+    p.style.top = this.dir[1] + "px";
+    p.style.width = this.size[0] + "px";
+    p.style.height  = this.size[1] + "px";
     return this;
   }
   change({url,dir,size}){
@@ -46,7 +46,6 @@ class page{
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
       p.addEventListener("touchmove",function(e){
         let t = e.touches[0];
-        console.log(addition)
         let dir = [e.pageX - addition[0],e.pageY - addition[1]];
         _this.change({dir});
       });
@@ -70,6 +69,7 @@ class page{
   createCloseBtn(p){
     let b = document.createElement("div");
     b.className = "closePageButton";
+    b.innerHTML = "×";
     b.style.width = b.offsetHeight + "px";
     b.style.fontSize = b.offsetHeight * 0.8 + "px";
     p.appendChild(b);
@@ -83,11 +83,8 @@ class page{
   createChangeBox(p){
     let b = document.createElement("div");
     b.className = "pageChangeBox";
-    b.innerHTML = `
-      <input placeholder="url" class="pageURL">
-      <input placeholder="请输入长度和宽度（用,相隔）" class="pageSize">
-      <button class="pageChangeBtn">修改大小</button>`;
-    p.appendChild(b)
+    b.innerHTML = `<input placeholder="url" class="pageURL"><input placeholder="请输入长度和宽度（用,相隔）" class="pageSize"><button class="pageChangeBtn">修改大小</button>`;
+    p.appendChild(b);
     let page = this.page;
     let url = b.querySelector(".pageURL"),
         size = b.querySelector(".pageSize"),
