@@ -67,6 +67,7 @@ h1{
   left:0;
 }
 .closePageButton{
+  width:100px;
   height:100%;
   color:red;
   text-align:center;
