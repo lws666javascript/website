@@ -58,12 +58,12 @@
     <a url="https://pixivel.moe">Pixivel</a>
     <a url="https://chat1.binjie.site:7777">ChatGPT Free</a>
     <div class="back" onclick="history.back()">←</div>
-    <script src="../page.js">
+    <script src="../page.js"></script>
     <script>
       document.body.onclick = function(e){
         let t = e.target,
             b = document.body;
-        if(t.tagName === "a"){
+        if(t.tagName === "A"){
           new Page({
             url:t.url,
             size:[b.offsetWidth * 0.9,b.offsetHeight * 0.9],
