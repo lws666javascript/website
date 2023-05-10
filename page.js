@@ -14,8 +14,8 @@ class page{
     this.page = e;
     let page = this.page;
     this.bind();
-    this.createIframe();
-    this.createTools(p);
+    this.createIframe(e);
+    this.createTools(e);
     return this;
   }
   render(){
@@ -44,19 +44,19 @@ class page{
         let t = e.touches[0];
         let x = beginDir[0],
             y = beginDir[1];
-        let addtion = [t.pageX - x,t.pageY - y];
+        let addition = [t.pageX - x,t.pageY - y];
         console.log(addition)
-        let dir = [_this.dir[0] + addtion[0],_this.dir[1] + addtion[1]];
+        let dir = [_this.dir[0] + addition[0],_this.dir[1] + addition[1]];
         console.log(dir)
         _this.change({dir});
       });
     });
   }
-  createIframe(){
+  createIframe(p){
     let i = document.createElement("iframe");
     i.className = "adding-iframe";
     i.src = this.url;
-    this.page.appendChild(i);
+    p.appendChild(i);
     this.iframe = i;
     return this;
   }
