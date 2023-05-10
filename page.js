@@ -13,9 +13,9 @@ class Page{
     p.appendChild(e);
     this.page = e;
     let page = this.page;
-    this.bind();
     this.createIframe(e);
     this.createTools(e);
+    this.bind();
     this.render();
     return this;
   }
