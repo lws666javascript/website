@@ -38,7 +38,7 @@ class Page{
   bind(){
     let p = this.page;
     let _this = this;
-    p.addEventListener("mousein",function(e){
+    p.addEventListener("mousedown",function(e){
       let ele = e.target;
       let beginDir = [e.pageX,e.pageY];
       let beginBDir = [ele.offsetLeft,ele.offsetTop];
