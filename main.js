@@ -10,15 +10,27 @@ document.querySelector("#ConsoleCode").addEventListener("click",function(){
   }catch(e){
     alert(e)
   }
-})
+});
 //绑定事件添加iframe
 userSubmit.addEventListener("click",function(){
+  
   let v = userInput.value;
+  /*
   let iframe = document.createElement("iframe");
   iframe.src = v;
   iframe.className = "adding-iframe center";
   mainPage.appendChild(iframe);
   createCloseBtn(iframe);
+  */
+  let body = document.body,
+      w = body.offsetWidth,
+      h = body.offsetHeight;
+  let page = new Page({
+    url:v,
+    size:[w * 0.8,h * 0.8],
+    dir:[w * 0.1,h * 0.1]
+  });
+  page.show(document.body);
 })
 //定义函数添加button
 function createCloseBtn(e){
@@ -33,15 +45,3 @@ function createCloseBtn(e){
     c.remove();
   });
 }
-document.querySelector("#viewScore").addEventListener("click",function(e){
-  let f = e.target;
-  let text = document.documentElement.outerHTML.replace(/</g,"&lt;").replace(/>/g,"&gt;<br />&#32;&#32;");
-  if(!f.viewState){
-    f.viewScoreStorage = mainPage.innerHTML;
-    mainPage.innerHTML = text;
-    f.viewState = 1;
-  }else{
-    mainPage.innerHTML = f.viewScoreStorage;
-    f.viewState = 0;
-  }
-});
