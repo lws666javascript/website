@@ -90,7 +90,7 @@ class Page{
         size = b.querySelector(".pageSize"),
         btn = b.querySelector(".pageChangeBtn");
     url.vaule = this.url;
-    console.log(url.value)
+    console.log(this.url)
     size.value = this.size.join(",");
     let _this = this;
     b.addEventListener("click",function(){
