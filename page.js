@@ -102,5 +102,5 @@ try{class Page{
     });
     return b;
   }
-console.log(Page)
+}
     }catch(e){alert(e)}
