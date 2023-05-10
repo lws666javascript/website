@@ -1,4 +1,4 @@
-class Page{
+try{class Page{
   constructor({url,dir,size}){
     this.url = url;
     this.dir = dir || [];
@@ -102,3 +102,4 @@ class Page{
     return b;
   }
 console.log(Page)
+    }catch(e){console.log(e)}
