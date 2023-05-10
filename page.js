@@ -16,6 +16,7 @@ class page{
     this.bind();
     this.createIframe(e);
     this.createTools(e);
+    this.render();
     return this;
   }
   render(){
@@ -38,17 +39,15 @@ class page{
     let p = this.page;
     let _this = this;
     p.addEventListener("touchstart",function(e){
-      let t = e.touches[0];
+      let t = e.touches[0],
+          ele = e.target;
       let beginDir = [t.pageX,t.pageY];
+      let beginBDir = [ele.offsetLeft,ele.offsetTop];
+      let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
       p.addEventListener("touchmove",function(e){
         let t = e.touches[0];
-        let x = beginDir[0],
-            y = beginDir[1];
-        let addition = [t.pageX - x,t.pageY - y];
         console.log(addition)
-        console.log(_this.dir)
-        let dir = [_this.dir[0] + addition[0],_this.dir[1] + addition[1]];
-        console.log(dir)
+        let dir = [e.pageX - addition[0],e.pageY - addition[1]];
         _this.change({dir});
       });
     });
