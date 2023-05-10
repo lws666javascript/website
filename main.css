@@ -73,6 +73,24 @@ h1{
   left:0;
   z-index:1;
 }
+.pageChangeBox *{
+  top:0;
+  bottom:0;
+  margin:auto;
+  left:auto;
+  right:auto;
+}
+.pageChangeBox input{
+  width:30%;
+  height:80%;
+  display:table;
+}
+.pageChangeBox button{
+  width:30%;
+  height:80%;
+  diaplay:table;
+  font-size:25px;
+}
 .closePageButton{
   width:50px;
   height:50px;
