@@ -25,7 +25,7 @@ userSubmit.addEventListener("click",function(){
   let body = document.body,
       w = body.offsetWidth,
       h = body.offsetHeight;
-  let page = new Page({
+  let page = new page({
     url:v,
     size:[w * 0.8,h * 0.8],
     dir:[w * 0.1,h * 0.1]
