@@ -39,9 +39,8 @@ class Page{
     let p = this.page;
     let _this = this;
     p.addEventListener("mousedown",function(e){
-      let ele = e.target;
       let beginDir = [e.pageX,e.pageY];
-      let beginBDir = [ele.offsetLeft,ele.offsetTop];
+      let beginBDir = [_this.dir[0],_this.dir[1]];
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
       p.addEventListener("mousemove",function(e){
         let dir = [e.pageX - addition[0],e.pageY - addition[1]];
@@ -109,5 +108,13 @@ class Page{
       });
     });
     return b;
+  }
+  updateStyle(){
+    for(let v of [...arguments]){
+      let p = v[0];
+      for(let i of v[1]){
+        p.style[i] = v[1][i];
+      }
+    }
   }
 }
