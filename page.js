@@ -28,7 +28,10 @@ class Page{
     p.style.height  = this.size[1] + "px";
     this.updateStyle([this.tools.close,{
       height:this.tools.close.offsetWidth + "px",
-      fontSize:this.tools.close.offsetWidth * 0.9 + "px";
+      fontSize:this.tools.close.offsetWidth * 0.9 + "px",
+      lineHeight:this.tools.close.offsetWidth + "px"
+    }],[this.tools.tools,{
+      fontSize:this.tools.tools.offserHeight * 0.8 + "px"
     }]);
     return this;
   }
