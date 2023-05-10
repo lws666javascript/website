@@ -1,4 +1,4 @@
-class page{
+class Page{
   constructor({url,dir,size}){
     this.url = url;
     this.dir = dir || [];
