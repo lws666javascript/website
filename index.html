@@ -13,7 +13,7 @@
       <div id="createIframe">
         <span>请输入完整网址：</span><input id="UserInput">
         <button id="UserSubmit">生成网页</button>
-        <button id="saveUserURL" onclick="alert('功能尚未开发完毕！')">保存</button>
+        <button id="saveUserURL" onclick="saveURL(userSubmit.value)">保存</button>
         <button id="viewSavedURL">查看保存的网页</button>
       </div>
     </div>
@@ -44,6 +44,7 @@
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <script>var vConsole = new window.VConsole();</script>
     <script src="./js/page.js"></script>
+    <script src="./js/saveURL.js"></script>
     <script src="./main.js"></script>
   </body>
 </html>
