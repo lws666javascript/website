@@ -81,7 +81,7 @@ class Page{
         p.ontouchstart = null;
         p.onmousedown = null;
       }else{
-        t.tools.style.visibility = "hidden";
+        t.tools.style.visibility = "visible";
         //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
         p.ontouchstart = p.touchstartEvent;
