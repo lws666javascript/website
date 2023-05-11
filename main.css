@@ -28,13 +28,6 @@ body{
   50%{color:green;}
   to{color:skyblue;}
 }
-@keyframes linkDH{
-  from{}
-  to{
-    width:15%;
-    height:5%;
-  }
-}
 @keyframes rotate{
   from{
     transform:rotateY(0)
