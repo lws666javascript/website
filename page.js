@@ -59,6 +59,15 @@ class Page{
         }
       }
     }
+    p.onmousedown = function(e){
+      p.ontouchstart([e]);
+      p.onmousemove = function(e){
+        p.ontouchmove([e]);
+        p.onmouseup = function(){
+          p.onmousemove = null;
+        }
+      }
+    }
     p.touchstartEvent = p.ontouchstart;
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
