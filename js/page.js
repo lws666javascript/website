@@ -75,13 +75,13 @@ class Page{
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
       if(!t.hiddenState){
-        t.tools.style.visible = "hidden";
+        t.tools.style.visibility = "hidden";
         //_this.iframe.style.height = "100%";
         t.hiddenState = 1;
         p.ontouchstart = null;
         p.onmousedown = null;
       }else{
-        t.tools.style.visible = "hidden";
+        t.tools.style.visibility = "hidden";
         //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
         p.ontouchstart = p.touchstartEvent;
