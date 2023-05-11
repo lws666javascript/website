@@ -58,6 +58,7 @@
         font-size:30px;
         color:#bfa;
         background-color:#111;
+        border-radius:20px;
       }
       #savedURLPage{
         width:100%;
@@ -102,6 +103,7 @@
       }
       document.querySelector("#saveURL").onclick = function(){
         let url = getURL();
+        alert(url)
         let p = document.querySelector("#savedURLPage");
         for(let v of url){
           if(!p.created){
