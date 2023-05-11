@@ -34,7 +34,7 @@
         margin-left:2.5%;
         margin-top:40px;
       }
-      div.back{
+      div.back,#saveURL{
         width:50px;
         height:50px;
         font-size:40px;
@@ -51,6 +51,14 @@
         left:0;
         z-index:256
       }
+      #saveURL{
+        right:0;
+        left:auto;
+        width:200px;
+        font-size:30px;
+        color:#bfa;
+        background-color:#111;
+      }
     </style>
   </head>
   <body>
@@ -62,6 +70,7 @@
     <a url="https://chat1.binjie.site:7777">ChatGPT Free</a>
     <a url="https://www.w3school.com.cn">w3school</a>
     <div class="back" onclick="history.back()">←</div>
+    <div id="saveURL">我保存的网页</div>
     <script src="../js/page.js"></script>
     <script>
       document.body.onclick = function(e){
