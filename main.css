@@ -128,8 +128,9 @@ h1{
 }
 #usualWebsite{
   display:block;
-  width:10%
-  height:2%;
+  width:100px;
+  height:50px;
+  font-size:20px;
   background-color:white;
   color:black;
   line-height:2%;
@@ -140,9 +141,6 @@ h1{
 #usualWebsite:hover{
   background-color:rgba(100,100,100,.8);
   shadow:10px rgba(200,200,200,.8);
-  width:15%;
-  height:5%;
   color:rgba(200,200,255,.8);
-  animation:linkDH 0.5s;
   animation:rotate 1s infinite;
 }
