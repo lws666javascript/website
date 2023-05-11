@@ -2,7 +2,7 @@ let ls = localStorage;
 ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL);
-  if(/^http/.test(url)){
+  if(/^http.*/.test(url)){
     URL.push(url);
     alert("保存成功！")
   }else{
