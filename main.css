@@ -114,5 +114,13 @@ h1{
   width:10%
   height:2%;
   line-height:2%;
-  
+  transition:width 0.5s;
+  transition:height 0.5s;
+}
+#usualWebsite:hover{
+  background-color:rgba(100,100,100,.5);
+  shadow:10px rgba(10,10,10,.5);
+  width:15%;
+  height:5%;
+  color:rgba(200,200,255,.8);
 }
