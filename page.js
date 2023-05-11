@@ -69,6 +69,7 @@ class Page{
       }
     }
     p.touchstartEvent = p.ontouchstart;
+    p.mouseEvent = p.onmousedown;
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
       if(!t.hiddenState){
@@ -76,11 +77,13 @@ class Page{
         //_this.iframe.style.height = "100%";
         t.hiddenState = 1;
         p.ontouchstart = null;
+        p.onmousedown = null;
       }else{
         t.tools.style.visible = "hidden";
         //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
         p.ontouchstart = p.touchstartEvent;
+        p.onmousedown = p.mouseEvent;
       }
     });
   }
