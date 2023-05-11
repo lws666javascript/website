@@ -1,6 +1,7 @@
 *{
   margin:0;
   padding:0;
+  text-decoration:none;
 }
 body{
   width:100%;
@@ -107,4 +108,11 @@ h1{
   left:auto;
   right:10px;
   z-index:3;
+}
+#usualWebsite{
+  display:block;
+  width:10%
+  height:2%;
+  line-height:2%;
+  
 }
