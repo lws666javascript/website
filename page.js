@@ -45,28 +45,35 @@ class Page{
   bind(){
     let p = this.page;
     let _this = this;
-    p.addEventListener("mousedown",function(e){
-      let beginDir = [e.pageX,e.pageY];
+    p.ontouchstart = function(e){
+      let t = e.touches[0];
+      let beginDir = [t.pageX,t.pageY];
       let beginBDir = [_this.dir[0],_this.dir[1]];
-      let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
-      p.onmousemove = function(e){
-        let dir = [e.pageX - addition[0],e.pageY - addition[1]];
-        console.log(dir)
+      let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]];
+      p.ontouchmove = function(e){
+        let t = e.touches[0];
+        let dir = [t.pageX - addition[0],t.pageY - addition[1]];
         _this.change({dir});
+        p.ontouchend = function(){
+          p.ontouchmove = null;
+        }
       }
-    });
+    }
+    p.touchstartEvent = p.ontouchstart;
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
       if(!t.hiddenState){
         t.tools.style.visible = "hidden";
         //_this.iframe.style.height = "100%";
         t.hiddenState = 1;
+        p.ontouchstart = null;
       }else{
         t.tools.style.visible = "hidden";
         //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
+        p.ontouchstart = p.touchstartEvent;
       }
-    })
+    });
   }
   createIframe(p){
     let i = document.createElement("iframe");
