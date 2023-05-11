@@ -60,9 +60,9 @@ class Page{
       }
     }
     p.onmousedown = function(e){
-      p.ontouchstart([e]);
+      p.ontouchstart({touches:[e]});
       p.onmousemove = function(e){
-        p.ontouchmove([e]);
+        p.ontouchmove({touches:[e]});
         p.onmouseup = function(){
           p.onmousemove = null;
         }
