@@ -59,15 +59,17 @@ class Page{
         }
       }
     }
-    /*p.onmousedown = function(e){
-      p.ontouchstart({touches:[e]});
+    p.onmousedown = function(e){
+      let dir = _this.dir,
+          addition = [e.pageX - dir[0],e.pageY - dir[1]];
       p.onmousemove = function(e){
-        p.ontouchmove({touches:[e]});
+        let dir = [e.pageX - addition[0],e.pageY - addition[1]];
+        _this.change({dir})
         p.onmouseup = function(){
           p.onmousemove = null;
         }
       }
-    }*/
+    }
     p.touchstartEvent = p.ontouchstart;
     p.mouseEvent = p.onmousedown;
     p.addEventListener("dblclick",function(){
