@@ -49,10 +49,10 @@ class Page{
       let beginDir = [e.pageX,e.pageY];
       let beginBDir = [_this.dir[0],_this.dir[1]];
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
-      p.addEventListener("mousemove",function(e){
+      p.onmousemove = function(e){
         let dir = [e.pageX - addition[0],e.pageY - addition[1]];
         _this.change({dir});
-      });
+      }
     });
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
