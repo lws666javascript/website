@@ -67,6 +67,7 @@
         let t = e.target,
             b = document.body;
         if(t.tagName === "A"){
+          alert(t.getAttribute("url"))
           new Page({
             url:t.getAttribute("url"),
             size:[b.offsetWidth * 0.9,b.offsetHeight * 0.9],
