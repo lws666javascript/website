@@ -58,11 +58,11 @@ class Page{
     p.addEventListener("dblclick",function(){
       let t = _this.tools;
       if(!t.hiddenState){
-        t.tools.style.display = "none";
+        t.tools.style.visible = "hidden";
         //_this.iframe.style.height = "100%";
         t.hiddenState = 1;
       }else{
-        t.tools.style.display = "block";
+        t.tools.style.visible = "hidden";
         //_this.iframe.style.height = "90%";
         t.hiddenState = 0;
       }
