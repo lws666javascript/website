@@ -59,7 +59,7 @@ class Page{
         }
       }
     }
-    p.onmousedown = function(e){
+    /*p.onmousedown = function(e){
       p.ontouchstart({touches:[e]});
       p.onmousemove = function(e){
         p.ontouchmove({touches:[e]});
@@ -67,7 +67,7 @@ class Page{
           p.onmousemove = null;
         }
       }
-    }
+    }*/
     p.touchstartEvent = p.ontouchstart;
     p.mouseEvent = p.onmousedown;
     p.addEventListener("dblclick",function(){
