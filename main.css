@@ -106,9 +106,9 @@ h1{
   right:10px;
   z-index:3;
 }
-#usualWebsite{
+div.box{
   display:block;
-  width:100px;
+  width:20%;
   height:50px;
   font-size:15px;
   text-align:center;
@@ -117,9 +117,11 @@ h1{
   line-height:50px;
   border-radius:5px;
   border:1px solid black;
-  transition:width height 0.5s;
+  float:left;
+  margin-top:30px;
+  margin-left:4%;
 }
-#usualWebsite:hover{
+div.box:hover{
   background-color:rgba(100,100,100,.8);
   shadow:10px 0 0 rgba(200,200,200,.8);
   color:rgba(200,200,255,.8);
