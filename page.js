@@ -51,6 +51,7 @@ class Page{
       let addition = [beginDir[0] - beginBDir[0],beginDir[1] - beginBDir[1]]
       p.onmousemove = function(e){
         let dir = [e.pageX - addition[0],e.pageY - addition[1]];
+        console.log(dir)
         _this.change({dir});
       }
     });
