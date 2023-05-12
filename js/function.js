@@ -5,12 +5,12 @@ function jq(ele){
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
-    type:this.self.tagName,
-    id:this.self.id,
-    class:this.self.className,
-    inner:this.self.innerHTML,
-    size:[this.self.offsetWidth,this.self.offsetHeight],
-    dir:[this.self.offsetLeft,this.self.offsetTop],
+    type:o.self.tagName,
+    id:o.self.id,
+    class:o.self.className,
+    inner:o.self.innerHTML,
+    size:[o.self.offsetWidth,o.self.offsetHeight],
+    dir:[o.self.offsetLeft,o.self.offsetTop],
     getStyle(){
       //遍历获取元素样式
       let t = this.self;
