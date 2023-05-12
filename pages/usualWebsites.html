@@ -64,14 +64,16 @@
       #URLPage{
         position:absolute;
         background-color:white;
+        transition:width 1s,height 1s,opacity 1s;
       }
       .closedURLPage{
         overflow:hidden;
         opacity:0;
         z-index:0;
-        transition:width 0.5s,height 0.5s,opacity 0.5s;
       }
       .savedURLPage{
+        top:0;
+        bottom:auto;
         width:100%;
         height:100%;
         opacity:1;
