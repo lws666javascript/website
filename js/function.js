@@ -85,8 +85,16 @@ function jq(text,ele){
   }
   return o;
 }
-jq.create = function(){
-
+jq.create = function(tag,{id="",class="",inner="",size,css}){
+  let e = document.createElement(tag);
+  let jq = jq(e);
+  jq.id = id;
+  jq.class = class;
+  jq.inner = inner;
+  jq.set();
+  size && jq.size();
+  css && jq.css();
+  return jq;
 }
 const random = {
   random(){
