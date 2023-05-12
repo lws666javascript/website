@@ -64,7 +64,7 @@ class Page{
           addition = [e.pageX - dir[0],e.pageY - dir[1]];
       p.onmousemove = function(e){
         let dir = [e.pageX - addition[0],e.pageY - addition[1]];
-        _this.change({dir})
+        _this.change({dir});
         p.onmouseup = function(){
           p.onmousemove = null;
         }
