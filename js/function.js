@@ -96,6 +96,8 @@ jq.create = function(tag,{id="",class="",inner="",size,css}){
   css && jq.css();
   return jq;
 }
+jq.body = jq(document.body);
+jq.html = jq(document.documentElement);
 const random = {
   random(){
     return Math.random();
