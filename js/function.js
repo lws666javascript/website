@@ -11,7 +11,7 @@ function jq(ele){
     inner:this.self.innerHTML,
     size:[this.self.offsetWidth,this.self.offsetHeight],
     dir:[this.self.offsetLeft,this.self.offsetTop],
-    parent:jq(this.self.parentNode),
+    //parent:jq(this.self.parentNode),
     children:this.getChildren(),
     getChildren:function(){
       //遍历获取子元素
