@@ -38,6 +38,7 @@ function jq(text,ele){
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.style = this.getStyle();
       this.children = this.getChildren();
+      this.parent = jq(this.self.parentNode);
     },
     bind(e,f){
       this.self.addEventListener(e,f.bind(this));
