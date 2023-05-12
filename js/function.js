@@ -2,7 +2,7 @@ function jq(text,ele){
   let jqE = text?document.querySelector(text):ele;
   const o = {
     self:jqE,
-    type:"jqObject",
+    type:this.self.tagName,
     id:this.self.id,
     class:this.self.className,
     inner:this.self.innerHTML,
