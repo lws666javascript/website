@@ -11,17 +11,6 @@ function jq(ele){
     inner:this.self.innerHTML,
     size:[this.self.offsetWidth,this.self.offsetHeight],
     dir:[this.self.offsetLeft,this.self.offsetTop],
-    //parent:jq(this.self.parentNode),
-    children:this.getChildren(),
-    getChildren:function(){
-      //遍历获取子元素
-      let cs = this.self.children;
-      const a = [];
-      for(let i of cs){
-        a.push(jq(i));
-      }
-      return a;
-    },
     getStyle(){
       //遍历获取元素样式
       let t = this.self;
@@ -45,8 +34,6 @@ function jq(ele){
       this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.style = this.getStyle();
-      this.children = this.getChildren();
-      this.parent = jq(this.self.parentNode);
     },
     bind(e,f){
       //绑定事件，传入this参数，便于事件处理
