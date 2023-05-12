@@ -91,7 +91,7 @@
     <div id="saveURL">我保存的网页</div>
     <div id="savedURLPage" class="center">
       <h1>我保存的网页</h1>
-      <div class="back" onclick="document.querySelector('.savedURLPage').className = 'closedURLPage'">×</div>
+      <div class="back" onclick="document.querySelector('.savedURLPage').className = 'closedURLPage center'">×</div>
     </div>
     <script src="../js/saveURL.js"></script>
     <script src="../js/page.js"></script>
@@ -118,7 +118,7 @@
             break;
           }
         }
-        p.className = "savedURLPage";
+        p.className = "savedURLPage center";
       }
       function crtA(p,url){
         let a = document.createElement("a");
