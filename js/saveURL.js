@@ -15,3 +15,16 @@ function getURL(){
   let URL = JSON.parse(ls.savedURL);
   return URL;
 }
+const setURL = {
+  nameURL(url){
+    let r = /\\name=.*\\/;
+    url.serach(r);    
+  },
+  delURL(url){
+    let r = /\\del\\/;
+    if(r.test(url)){
+      let u = getURL();
+      
+    }
+  }
+}
