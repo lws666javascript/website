@@ -10,7 +10,7 @@ document.querySelector("#ConsoleCode").addEventListener("click",function(){
     let a = eval(prompt("调试代码"));
     alert(a);
   }catch(e){
-    alert(e)
+    console.log(e)
   }
 });
 //绑定事件添加iframe
