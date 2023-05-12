@@ -2,7 +2,13 @@ function jq(text){
   let jq = document.querySelector(text);
   const o = {
     self:jq,
+    type:jqObject
+    id:this.self.id,
+    class:this.self.className,
+    inner:this.self.innerHTML,
     size:[this.self.offsetWidth,this.self.offsetHeight],
+    p:this.self.parentNode,
+    children:this.self.children,
     dir:[this.self.offsetLeft,this.self.offsetTop],
     style:(function(t){
       let s = {};
@@ -11,6 +17,13 @@ function jq(text){
       }
       return s;
     })(this.self),
+    set(){
+      let s = this.self;
+      s.id = this.id;
+      s.className = this.class;
+      s.innerHTML = this.inner;
+      return this;
+    },
     bind(e,f){
       this.self.addEventListener(e,f);
       return this;
@@ -36,6 +49,20 @@ function jq(text){
         left:dir[0],
         right:dir[1]
       });
+      return this;
+    },
+    remove(){
+      this.self.remove();
+      return this;
+    },
+    append(){
+      for(let i of [...arguments]){
+        this.self.appendChild(i.self);
+      }
+      return this;
+    },
+    toString(){
+      return "[Object jqElementObject]";
     }
   }
   return o;
