@@ -79,12 +79,6 @@ function jq(text,ele){
       }
       return this;
     },
-    create(tag){
-      let e = document.createElement(tag),
-          JQ = jq(e);
-      this.append(JQ);
-      return this;
-    },
     toString(){
       return "[Object jqElementObject]";
     }
