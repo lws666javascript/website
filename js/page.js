@@ -102,8 +102,10 @@ class Page{
     d.className = "pageTools";
     p.appendChild(d);
     this.tools.tools = d;
-    this.tools.close = this.createCloseBtn(d);
-    this.tools.change = this.createChangeBox(d);
+    let close = this.createCloseBtn(d);
+    let change = this.createChangeBox(d);
+    this.tools.close = close;
+    this.tools.change = change;
   }
   createCloseBtn(p){
     let b = document.createElement("div");
