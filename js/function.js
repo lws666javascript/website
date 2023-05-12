@@ -91,6 +91,9 @@ function jq(text,ele){
   }
   return o;
 }
+jq.create = function(){
+
+}
 const random = {
   random(){
     return Math.random();
