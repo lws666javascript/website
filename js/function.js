@@ -2,7 +2,6 @@ function jq(ele){
   //判断是否为元素，不是则获取元素
   let jqE = ele.tagName?document.querySelector(ele):ele;
   //创建jq对象
-  
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
