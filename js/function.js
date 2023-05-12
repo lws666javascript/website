@@ -1,5 +1,5 @@
 function jq(text,ele){
-  let jqE = text?document.querySelector(text):ele;
+  let jqE = text.tagName?document.querySelector(text):ele;
   const o = {
     self:jqE,
     type:this.self.tagName,
