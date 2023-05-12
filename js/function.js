@@ -1,7 +1,7 @@
 function jq(text,ele){
-  let jq = text?document.querySelector(text):ele;
+  let jqE = text?document.querySelector(text):ele;
   const o = {
-    self:jq,
+    self:jqE,
     type:"jqObject",
     id:this.self.id,
     class:this.self.className,
