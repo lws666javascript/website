@@ -1,14 +1,21 @@
-function jq(text){
-  let jq = document.querySelector(text);
+function jq(text,ele){
+  let jq = document.querySelector(text) || ele;
   const o = {
     self:jq,
-    type:jqObject
+    type:"jqObject",
     id:this.self.id,
     class:this.self.className,
     inner:this.self.innerHTML,
     size:[this.self.offsetWidth,this.self.offsetHeight],
-    p:this.self.parentNode,
-    children:this.self.children,
+    parent:jq(this.self.parentNode),
+    children:(function(s){
+      let cs = s.children;
+      const a = [];
+      for(let i of [...cs]){
+        a.push(jq(i));
+      }
+      return a;
+    })(this.self),
     dir:[this.self.offsetLeft,this.self.offsetTop],
     style:(function(t){
       let s = {};
