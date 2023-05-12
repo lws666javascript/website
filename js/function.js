@@ -1,6 +1,5 @@
-function jq(text,ele){
-  let jqE = text.tagName?document.querySelector(text):ele;
-  try{
+function jq(ele){
+  let jqE = ele.tagName?document.querySelector(ele):ele;
   const o = {
     self:jqE,
     type:this.self.tagName,
@@ -84,7 +83,6 @@ function jq(text,ele){
       return "[Object jqElementObject]";
     }
   }
-  }catch(e){alert(e)}
   return o;
 }
 jq.create = function(tag,{id="",class="",inner="",size,css}){
