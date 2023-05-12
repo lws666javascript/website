@@ -1,7 +1,8 @@
 //获取元素
 let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
-    mainPage = document.querySelector("#mainPage");
+    mainPage = document.querySelector("#mainPage"),
+    hlep = document.querySelector("#help");
 
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
@@ -14,7 +15,6 @@ document.querySelector("#ConsoleCode").addEventListener("click",function(){
 });
 //绑定事件添加iframe
 userSubmit.addEventListener("click",function(){
-  
   let v = userInput.value;
   let body = document.body,
       w = body.offsetWidth,
