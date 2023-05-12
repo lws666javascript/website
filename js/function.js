@@ -37,7 +37,7 @@ function jq(text,ele){
       this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.style = this.getStyle();
-      this.getChildren();
+      this.children = this.getChildren();
     },
     bind(e,f){
       this.self.addEventListener(e,f.bind(this));
