@@ -16,7 +16,7 @@ const random = {
     const a = [];
     while(k){
       let r = this.randInt(0,arr.length - 1);
-      if(arr[r] in a){
+      if(!(arr[r] in a)){
         a.push(arr[r]);
       }
     }
