@@ -32,7 +32,7 @@ function jq(text,ele){
       return this;
     },
     bind(e,f){
-      this.self.addEventListener(e,f);
+      this.self.addEventListener(e,f.bind(this));
       return this;
     },
     css(o){
