@@ -7,29 +7,37 @@ function jq(text,ele){
     class:this.self.className,
     inner:this.self.innerHTML,
     size:[this.self.offsetWidth,this.self.offsetHeight],
+    dir:[this.self.offsetLeft,this.self.offsetTop],
     parent:jq(this.self.parentNode),
-    children:(function(s){
-      let cs = s.children;
+    children:this.getChildren(),
+    getChildren:function(){
+      let cs = this.self.children;
       const a = [];
       for(let i of [...cs]){
         a.push(jq(i));
       }
       return a;
-    })(this.self),
-    dir:[this.self.offsetLeft,this.self.offsetTop],
-    style:(function(t){
+    },
+    getStyle(){
+      let t = this.self;
       let s = {};
       for(let i in t.style){
         s[i] = getComputedStyle(t,t[i]);
       }
       return s;
-    })(this.self),
+    },
     set(){
       let s = this.self;
       s.id = this.id;
       s.className = this.class;
       s.innerHTML = this.inner;
       return this;
+    },
+    update(){
+      this.size = [this.self.offsetWidth,this.self.offsetHeight];
+      this.dir = [this.self.offsetLeft,this.self.offsetTop];
+      this.style = this.getStyle();
+      this.getChildren();
     },
     bind(e,f){
       this.self.addEventListener(e,f.bind(this));
@@ -40,6 +48,7 @@ function jq(text,ele){
       for(let i in o){
         s.style[i] = o[i];
       }
+      this.update();
       return this;
     },
     size(s){
@@ -65,7 +74,14 @@ function jq(text,ele){
     append(){
       for(let i of [...arguments]){
         this.self.appendChild(i.self);
+        this.update();
       }
+      return this;
+    },
+    create(tag){
+      let e = document.createElement(tag),
+          JQ = jq(e);
+      this.append(JQ);
       return this;
     },
     toString(){
