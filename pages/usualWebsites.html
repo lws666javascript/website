@@ -35,7 +35,7 @@
         margin-top:40px;
         overflow:auto;
       }
-      div.back,#saveURL{
+      div.back,#saveURL,.closedURLPage{
         width:50px;
         height:50px;
         font-size:40px;
@@ -52,7 +52,7 @@
         left:0;
         z-index:256
       }
-      #saveURL{
+      #saveURL,.closedURLPage{
         right:0;
         left:auto;
         width:200px;
@@ -61,13 +61,17 @@
         background-color:#111;
         border-radius:20px;
       }
-      #savedURLPage{
+      .closedURLPage{
+        overflow:hidden;
+        z-index:0;
+      }
+      .savedURLPage{
         width:100%;
         height:100%;
         background-color:white;
-        display:none;
+        display:block;
       }
-      #savedURLPage .back{
+      .savedURLPage .back{
         top:0;
         right:0;
         left:auto;
@@ -87,7 +91,7 @@
     <div id="saveURL">我保存的网页</div>
     <div id="savedURLPage" class="center">
       <h1>我保存的网页</h1>
-      <div class="back" onclick="document.querySelector('#savedURLPage').style.display='none'">×</div>
+      <div class="back" onclick="document.querySelector('.savedURLPage').className = 'closedURLPage'">×</div>
     </div>
     <script src="../js/saveURL.js"></script>
     <script src="../js/page.js"></script>
@@ -105,7 +109,7 @@
       }
       document.querySelector("#saveURL").onclick = function(){
         let url = getURL();
-        let p = document.querySelector("#savedURLPage");
+        let p = document.querySelector(".closedURLPage");
         for(let v of url){
           if(!p.created){
             crtA(p,v);
@@ -114,7 +118,7 @@
             break;
           }
         }
-        p.style.display = "block";
+        p.className = "savedURLPage";
       }
       function crtA(p,url){
         let a = document.createElement("a");
