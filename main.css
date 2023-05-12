@@ -46,7 +46,7 @@ h1{
   height:80%;
   border:2px solid black;
   z-index:258;
-  background-image:linear-gradient(to bottom right,rgba(100,100,200,1),rgba(100,100,200,.5));
+  background-image:linear-gradient(to bottom right,skyblue,lime);
 }
 .adding-iframe{
   width:100%;
