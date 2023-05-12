@@ -61,6 +61,10 @@
         background-color:#111;
         border-radius:20px;
       }
+      #URLPage{
+        position:absolute;
+        background-color:white;
+      }
       .closedURLPage{
         overflow:hidden;
         opacity:0;
@@ -70,8 +74,8 @@
       .savedURLPage{
         width:100%;
         height:100%;
-        background-color:white;
         opacity:1;
+        z-index:257;
       }
       .savedURLPage .back{
         top:0;
@@ -91,9 +95,9 @@
     <a url="https://www.w3school.com.cn">w3school</a>
     <div class="back" onclick="history.back()">←</div>
     <div id="saveURL">我保存的网页</div>
-    <div id="closedURLPage" class="center">
+    <div id="URLPage" class="closedURLPage">
       <h1>我保存的网页</h1>
-      <div class="back" onclick="document.querySelector('.savedURLPage').className = 'closedURLPage center'">×</div>
+      <div class="back" onclick="document.querySelector('#URLPage').className = 'closedURLPage'">×</div>
     </div>
     <script src="../js/saveURL.js"></script>
     <script src="../js/page.js"></script>
@@ -111,7 +115,7 @@
       }
       document.querySelector("#saveURL").onclick = function(){
         let url = getURL();
-        let p = document.querySelector(".closedURLPage");
+        let p = document.querySelector("#URLPage");
         for(let v of url){
           if(!p.created){
             crtA(p,v);
@@ -120,7 +124,7 @@
             break;
           }
         }
-        p.className = "savedURLPage center";
+        p.className = "savedURLPage";
       }
       function crtA(p,url){
         let a = document.createElement("a");
