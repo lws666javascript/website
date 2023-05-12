@@ -1,5 +1,5 @@
 function jq(text,ele){
-  let jq = document.querySelector(text) || ele;
+  let jq = text?document.querySelector(text):ele;
   const o = {
     self:jq,
     type:"jqObject",
