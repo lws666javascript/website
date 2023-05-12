@@ -9,6 +9,7 @@ document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
     let a = eval(prompt("调试代码"));
     alert(a);
+    console.log(a);
   }catch(e){
     console.log(e)
   }
