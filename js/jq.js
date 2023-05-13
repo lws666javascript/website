@@ -92,12 +92,12 @@ function jq(ele){
   return o;
 }
 //jq函数create方法，可以创建DOM对象并生成jq对象返回
-jq.create = function(tag,{id,className,inner,size,css}){
+jq.create = function(tag,o){
   let e = document.createElement(tag);
   let jq = jq(e);
-  jq.id = id || "";
-  jq.class = className || "";
-  jq.inner = inner || "";
+  jq.id = o.id || "";
+  jq.class = o.class || "";
+  jq.inner = o.inner || "";
   jq.set();
   size && jq.size();
   css && jq.css();
