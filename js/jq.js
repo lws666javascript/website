@@ -114,24 +114,3 @@ jq.create = function(tag,o){
 //常用元素的引用
 jq.body = jq(document.body);
 jq.html = jq(document.documentElement);
-//random模块，仿python
-const random = {
-  random(){
-    return Math.random();
-  },
-  randInt(x,y){
-    return Math.random() * (y - x) + x;
-  },
-  choice(arr){
-    return arr[this.randInt(0,arr.length - 1)];
-  },
-  sample(arr,k){
-    const a = [];
-    while(k){
-      let r = this.randInt(0,arr.length - 1);
-      if(!(arr[r] in a)){
-        a.push(arr[r]);
-      }
-    }
-  }
-}
