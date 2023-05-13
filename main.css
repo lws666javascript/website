@@ -20,13 +20,13 @@ body{
   line-height:100%;
 }
 .text-color-sharking{
-  animation:sharking-color-change 0.8s infinite alternate;
+  animation:sharking-color-change 0.5s infinite alternate linear;
   background-color:black;
 }
 @keyframes sharking-color-change{
-  from{color:yellow;}
-  50%{color:green;}
-  to{color:skyblue;}
+  from{color:yellow;background-color:black;}
+  50%{color:lime;background-color:darkred;}
+  to{color:skyblue;background-color:darkgreen;}
 }
 /*Element Style*/
 h1{
