@@ -35,7 +35,7 @@ function jq(ele){
     update(){
       //更新样式
       this.style = this.getStyle();
-      this.size = [this.slef.offsetWidth,this.self.offsetHeight];
+      this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.w = size[0];
       this.h = size[1];
