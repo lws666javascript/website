@@ -5,11 +5,12 @@ function jq(ele){
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
-    type:jqE.tagName,
-    id:jqE.id,
-    class:jqE.className,
-    inner:jqE.innerHTML,
     init(){
+      //初始化对象属性
+      this.type = this.self.tagName;
+      this.id = this.self.id;
+      this.class = this.self.className;
+      this.inner = this.self.innerHTML;
       thid.update();
       this.set();
     },
