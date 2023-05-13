@@ -31,9 +31,10 @@ function jq(ele){
     },
     update(){
       //更新样式
-      this.size = [this.self.offsetWidth,this.self.offsetHeight];
-      this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.style = this.getStyle();
+      this.size = [this.style.width,this.style.height];
+      this.dir = [this.style.left,this.style.top];
+      return this;
     },
     bind(e,f){
       //绑定事件，传入this参数，便于事件处理
