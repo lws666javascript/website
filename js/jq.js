@@ -35,8 +35,12 @@ function jq(ele){
     update(){
       //更新样式
       this.style = this.getStyle();
-      this.size = [this.style.width,this.style.height];
-      this.dir = [this.style.left,this.style.top];
+      this.size = [this.slef.offsetWidth,this.self.offsetHeight];
+      this.dir = [this.self.offsetLeft,this.self.offsetTop];
+      this.w = size[0];
+      this.h = size[1];
+      this.x = dir[x];
+      this.y = dir[y];
       return this;
     },
     bind(e,f){
