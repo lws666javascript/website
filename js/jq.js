@@ -65,7 +65,7 @@ function jq(ele){
     },
     resize(s){
       //基于this.css的元素大小修改
-      this.size = [s[0] || this.size[0],s[1] || this.size[1]];
+      this.size = [parseFloat(s[0] || this.size[0]),parseFloat(s[1] || this.size[1])];
       this.css({
         width:this.size[0],
         height:this.size[1]
@@ -73,7 +73,7 @@ function jq(ele){
       return this;
     },
     move(d){
-      this.dir = [d[0] || this.dir[0],d[1] || this.dir[1]];
+      this.dir = [parseFloat(d[0] || this.dir[0]),parseFloat(d[1] || this.dir[1])];
       this.css({
         left:this.dir[0],
         top:this.dir[1]
