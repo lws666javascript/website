@@ -5,21 +5,13 @@ function jq(ele){
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
-    type:o.self.tagName,
-    id:o.self.id,
-    class:o.self.className,
-    inner:o.self.innerHTML,
-    size:[o.self.offsetWidth,o.self.offsetHeight],
-    dir:[o.self.offsetLeft,o.self.offsetTop],
-    getStyle(){
-      //遍历获取元素样式
-      let t = this.self;
-      let s = {};
-      for(let i in t.style){
-        s[i] = getComputedStyle(t,t[i]);
-      }
-      return s;
-    },
+    type:jqE.tagName,
+    id:jqE.id,
+    class:jqE.className,
+    inner:jqE.innerHTML,
+    size:[jqE.offsetWidth,jqE.offsetHeight],
+    dir:[jqE.offsetLeft,jqE.offsetTop],
+    style:getComputedStyle(jqE),
     set(){
       //设置属性
       let s = this.self;
@@ -33,7 +25,7 @@ function jq(ele){
       //更新样式
       this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
-      this.style = this.getStyle();
+      this.style = getComputedStyle(this.self);
     },
     bind(e,f){
       //绑定事件，传入this参数，便于事件处理
