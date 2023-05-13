@@ -21,7 +21,6 @@ body{
 }
 .text-color-sharking{
   animation:sharking-color-change 0.5s infinite alternate linear;
-  background-color:black;
 }
 @keyframes sharking-color-change{
   from{color:yellow;background-color:black;}
