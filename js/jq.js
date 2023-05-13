@@ -55,7 +55,9 @@ function jq(ele){
           requestAnimationFrame(arguments.callee);
         } 
       }
-      requestAnimationFrame(anm(this,f).bind());
+      requestAnimationFrame(function(){
+        anm(this);
+      }.bind(this));
     },
     css(o){
       //css样式修改
