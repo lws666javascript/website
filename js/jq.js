@@ -39,8 +39,8 @@ function jq(ele){
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
       this.w = this.size[0];
       this.h = this.size[1];
-      this.x = this.dir[x];
-      this.y = this.dir[y];
+      this.x = this.dir[0];
+      this.y = this.dir[1];
       return this;
     },
     bind(e,f){
