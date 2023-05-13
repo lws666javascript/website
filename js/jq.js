@@ -12,6 +12,7 @@ function jq(ele){
       this.class = this.self.className;
       this.inner = this.self.innerHTML;
       this.update();
+      return this;
     },
     getStyle(){
       let c = getComputedStyle(this.self);
