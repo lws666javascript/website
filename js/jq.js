@@ -88,6 +88,7 @@ function jq(ele){
       return "[Object jqElementObject]";
     }
   }
+  o.init();
   return o;
 }
 //jq函数create方法，可以创建DOM对象并生成jq对象返回
