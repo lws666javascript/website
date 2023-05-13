@@ -56,18 +56,18 @@ function jq(ele){
     },
     size(s){
       //基于this.css的元素大小修改
-      size = this.size = [s[0] || this.size[0],s[1] || this.size[1]];
+      this.size = [s[0] || this.size[0],s[1] || this.size[1]];
       this.css({
-        width:size[0],
-        height:size[1]
+        width:this.size[0],
+        height:this.size[1]
       });
       return this;
     },
     move(d){
-      dir = this.dir = [d[0] || this.dir[0],d[1] || this.dir[1]];
+      this.dir = [d[0] || this.dir[0],d[1] || this.dir[1]];
       this.css({
-        left:dir[0],
-        right:dir[1]
+        left:this.dir[0],
+        right:this.dir[1]
       });
       return this;
     },
