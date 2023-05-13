@@ -94,14 +94,14 @@ function jq(ele){
 //jq函数create方法，可以创建DOM对象并生成jq对象返回
 jq.create = function(tag,o){
   let e = document.createElement(tag);
-  let jq = jq(e);
-  jq.id = o.id || "";
-  jq.class = o.class || "";
-  jq.inner = o.inner || "";
-  jq.set();
-  o.size && jq.size();
-  o.css && jq.css();
-  return jq;
+  let j = jq(e);
+  j.id = o.id || "";
+  j.class = o.class || "";
+  j.inner = o.inner || "";
+  j.set();
+  o.size && j.size();
+  o.css && j.css();
+  return j;
 }
 //常用元素的引用
 jq.body = jq(document.body);
