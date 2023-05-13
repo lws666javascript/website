@@ -99,8 +99,8 @@ jq.create = function(tag,o){
   jq.class = o.class || "";
   jq.inner = o.inner || "";
   jq.set();
-  size && jq.size();
-  css && jq.css();
+  o.size && jq.size();
+  o.css && jq.css();
   return jq;
 }
 //常用元素的引用
