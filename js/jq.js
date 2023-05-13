@@ -9,8 +9,10 @@ function jq(ele){
     id:jqE.id,
     class:jqE.className,
     inner:jqE.innerHTML,
-    size:[jqE.offsetWidth,jqE.offsetHeight],
-    dir:[jqE.offsetLeft,jqE.offsetTop],
+    init(){
+      thid.update();
+      this.set();
+    },
     getStyle(){
       let c = getComputedStyle(this.self);
       let o = {};
