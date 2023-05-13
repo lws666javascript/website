@@ -76,7 +76,7 @@ function jq(ele){
       this.dir = [d[0] || this.dir[0],d[1] || this.dir[1]];
       this.css({
         left:this.dir[0],
-        right:this.dir[1]
+        top:this.dir[1]
       });
       return this;
     },
