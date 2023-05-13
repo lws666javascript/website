@@ -63,7 +63,7 @@ function jq(ele){
       this.update();
       return this;
     },
-    size(s){
+    resize(s){
       //基于this.css的元素大小修改
       this.size = [s[0] || this.size[0],s[1] || this.size[1]];
       this.css({
