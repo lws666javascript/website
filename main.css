@@ -25,7 +25,7 @@ body{
 }
 @keyframes sharking-color-change{
   from{color:yellow;background-color:black;}
-  50%{color:lime;background-color:darkred;}
+  50%{color:lime;background-color:red;}
   to{color:skyblue;background-color:darkgreen;}
 }
 /*Element Style*/
