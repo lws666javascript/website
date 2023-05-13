@@ -11,7 +11,7 @@ function jq(ele){
       this.id = this.self.id;
       this.class = this.self.className;
       this.inner = this.self.innerHTML;
-      thid.update();
+      this.update();
     },
     getStyle(){
       let c = getComputedStyle(this.self);
