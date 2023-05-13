@@ -46,10 +46,9 @@ function jq(ele){
     },
     css(o){
       //css样式修改
-      let s = this.self,
-          c = getComputedStyle(s);
+      let s = this.self;
       for(let i in o){
-        c.setProperty(i,o);
+        s.style[i] = o[i];
       }
       //对jq对象进行更新
       this.update();
