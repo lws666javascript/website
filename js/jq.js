@@ -11,7 +11,15 @@ function jq(ele){
     inner:jqE.innerHTML,
     size:[jqE.offsetWidth,jqE.offsetHeight],
     dir:[jqE.offsetLeft,jqE.offsetTop],
-    style:getComputedStyle(jqE),
+    getStyle(){
+      let c = getComputedStyle(this.self);
+      let o = {};
+      for(let i in c){
+        let n = c.item(i);
+        o[n] = c.getPropertyValue(n);
+      }
+      return o;
+    },
     set(){
       //设置属性
       let s = this.self;
@@ -25,7 +33,7 @@ function jq(ele){
       //更新样式
       this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
-      this.style = getComputedStyle(this.self);
+      this.style = this.getStyle();
     },
     bind(e,f){
       //绑定事件，传入this参数，便于事件处理
@@ -34,9 +42,10 @@ function jq(ele){
     },
     css(o){
       //css样式修改
-      let s = this.self;
+      let s = this.self,
+          c = getComputedStyle(s);
       for(let i in o){
-        s.style[i] = o[i];
+        c.setProperty(i,o);
       }
       //对jq对象进行更新
       this.update();
