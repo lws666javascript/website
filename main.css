@@ -40,6 +40,7 @@ h1{
   background-color:cyan;
   overflow:auto;
   background-image:url("./image/HuTao/HuTao1.jpg");
+  background-size:100%;
 }
 .adding-iframe-page{
   width:80%;
