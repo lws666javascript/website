@@ -20,7 +20,7 @@ body{
   line-height:100%;
 }
 .text-color-sharking{
-  animation:sharking-color-change 0.8s infinite;
+  animation:sharking-color-change 0.8s infinite alternate;
   background-color:black;
 }
 @keyframes sharking-color-change{
