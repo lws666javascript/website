@@ -69,18 +69,18 @@ function jq(ele){
     },
     resize(s){
       //基于this.css的元素大小修改
-      this.size = [parseFloat(s[0] || this.size[0]),parseFloat(s[1] || this.size[1])];
+      size = [s[0] || this.style.width,s[1] || this.style.height];
       this.css({
-        width:this.size[0],
-        height:this.size[1]
+        width:size[0],
+        height:size[1]
       });
       return this;
     },
     move(d){
-      this.dir = [parseFloat(d[0] || this.dir[0]),parseFloat(d[1] || this.dir[1])];
+      dir = [d[0] || this.style.left,d[1] || this.style.top];
       this.css({
-        left:this.dir[0],
-        top:this.dir[1]
+        left:dir[0],
+        top:dir[1]
       });
       return this;
     },
