@@ -44,6 +44,15 @@ function jq(ele){
       this.self.addEventListener(e,f.bind(this));
       return this;
     },
+    animation(f){
+      function anm(t,f){
+        if(f(t)){
+          f(t);
+          requestAnimationFrame(arguments.callee);
+        } 
+      }
+      requestAnimationFrame(anm(this,f).bind());
+    },
     css(o){
       //css样式修改
       let s = this.self;
