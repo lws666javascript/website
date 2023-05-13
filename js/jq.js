@@ -37,10 +37,10 @@ function jq(ele){
       this.style = this.getStyle();
       this.size = [this.self.offsetWidth,this.self.offsetHeight];
       this.dir = [this.self.offsetLeft,this.self.offsetTop];
-      this.w = size[0];
-      this.h = size[1];
-      this.x = dir[x];
-      this.y = dir[y];
+      this.w = this.size[0];
+      this.h = this.size[1];
+      this.x = this.dir[x];
+      this.y = this.dir[y];
       return this;
     },
     bind(e,f){
