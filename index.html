@@ -11,7 +11,8 @@
         'userState':0,
         'times':5
       }`;
-      let Data = JSON.parse(localStorage.Data);
+      let Data = JSON.parse(localStorage.Data),
+          date = new Date();
       Data.passwords = [];
       Data.index = random.randInt(0,499);
       for(let i = 0;i < 500;++i){
