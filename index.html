@@ -9,7 +9,7 @@
     <script>
       try{
       localStorage.Data = localStorage.getItem("Data") || '{"userState":0,"times":5}';
-      let Data = JSON.parse(localStorage.getItem("Data")),
+      let Data = JSON.parse(localStorage.Data),
           date = new Date();
       Data.date || (Data.date = date.getDate())
       if(date.getDate() != Data.date){
