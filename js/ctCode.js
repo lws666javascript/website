@@ -13,4 +13,5 @@ function ctCode(str){
       return reg.test(s);
     }
   }
+  return reg;
 }
