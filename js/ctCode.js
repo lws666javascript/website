@@ -7,7 +7,7 @@ function ctCode(str){
           p2 = s1.match(/=.*$/).replace("=","");
       return {
         p1:p2
-      }                
+      }
     }else{
       return reg.test(s);
     }
