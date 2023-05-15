@@ -1,5 +1,3 @@
-localStorage.Data = "{}";
-//获取元素
 let userInput = document.querySelector("#UserInput"),
     userSubmit = document.querySelector("#UserSubmit"),
     mainPage = document.querySelector("#mainPage"),
