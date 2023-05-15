@@ -26,6 +26,7 @@
           if(+answer === Data.passwords[Data.index]){
             alert("欢迎使用！");
             Data.userState = 1;
+            Data.times = infinity;
             localStorage.Data = JSON.stringify(Data);
           }else{
             if(confirm("激活码错误！是否重答")){
