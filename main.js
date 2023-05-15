@@ -27,7 +27,4 @@ userSubmit.addEventListener("click",function(){
     dir:[w * 0.05,h * 0.05]
   });
   page.show(document.body);
-  setTimeout(function(){
-    jq(page.page).remove();
-  },1800000);
 });
