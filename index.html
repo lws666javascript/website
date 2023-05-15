@@ -31,17 +31,17 @@
             alert("欢迎使用！");
             Data.userState = 1;
             Data.times = infinity;
-            delete Data.passwords;
+            /*delete Data.passwords;
             delete Data.index;
-            localStorage.Data = JSON.stringify(Data);
+            localStorage.Data = JSON.stringify(Data);*/
           }else{
             if(confirm("激活码错误！是否重答")){
               welcome()
             }else{
               alert("欢迎使用（免费版）！");
-              delete Data.passwords;
+              /*delete Data.passwords;
               delete Data.index;
-              localStorage.Data = JSON.stringify(Data);
+              localStorage.Data = JSON.stringify(Data);*/
             }
           }
         }else{
@@ -49,10 +49,10 @@
         }
       }
       if(!JSON.parse(localStorage.Data).userState)welcome();
-      /*Data = null;
+      Data = null;
       delete Data.passwords;
       delete Data.index;
-      localStorage.Data = JSON.stringify(Data);*/
+      localStorage.Data = JSON.stringify(Data);
       }catch(e){alert(e.stack)}
     </script>
   </head>
