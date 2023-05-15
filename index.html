@@ -7,8 +7,10 @@
     <script src="./js/ctCode.js" />
     <script src="./js/saveURL.js" />
     <script>
-      localStorage.Data || localStorage.Data = "{}";
-      
+      localStorage.Data
+      for(let i = 0;i < 500;++i){
+        JSON.parse(localStorage.Data).
+      }
       function welcome(){
         alert("欢迎来到LWS搭建的网页！");
         if(confirm("此网站服务每天可免费使用5次，是否继续使用？")){
