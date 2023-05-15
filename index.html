@@ -9,7 +9,13 @@
     <script>
       try{
       localStorage.Data = localStorage.getItem("Data") || '{"userState":0,"times":5}';
-      let Data = JSON.parse(localStorage.getItem("Data"));
+      let Data = JSON.parse(localStorage.getItem("Data")),
+          date = new Date();
+      Data.date || (Data.date = date.getDate())
+      if(date.getDate() != Data.date){
+        Data.times = 5;
+        Data.date = date.getDate();
+      }
       Data.passwords = [];
       Data.index = random.randInt(0,499);
       for(let i = 0;i < 500;++i){
@@ -25,7 +31,6 @@
             alert("欢迎使用！");
             Data.userState = 1;
             Data.times = infinity;
-            localStorage.Data = JSON.stringify(Data);
           }else{
             if(confirm("激活码错误！是否重答")){
               welcome()
@@ -37,6 +42,7 @@
           history.back();
         }
       }
+      localStorage.Data = JSON.stringify(Data);
       if(!JSON.parse(localStorage.Data).userState)welcome();
       }catch(e){alert(e.stack)}
     </script>
