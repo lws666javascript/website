@@ -11,7 +11,7 @@
         'userState':0,
         'times':5
       }`;
-      const Data = JSON.parse(localStorage.Data);
+      let Data = JSON.parse(localStorage.Data);
       Data.passwords = [];
       Data.index = random.randInt(0,499);
       for(let i = 0;i < 500;++i){
@@ -38,6 +38,7 @@
           history.back();
         }
       }
+      Data = null;
       if(!JSON.parse(localStorage.Data).userState)welcome();
     </script>
   </head>
