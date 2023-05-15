@@ -43,6 +43,7 @@
         }
       }
       localStorage.Data = JSON.stringify(Data);
+      Data = null;
       if(!JSON.parse(localStorage.Data).userState)welcome();
       }catch(e){alert(e.stack)}
     </script>
