@@ -23,7 +23,7 @@
         if(confirm("此网站服务每天仅可免费使用5次，是否继续使用？")){
           alert(eval(prompt("请输入指定代码获取激活码！")));
           let answer = prompt("输入激活码(6位数字)可无限使用");
-          if(answer === Data.passwords[Data.index]){
+          if(+answer === Data.passwords[Data.index]){
             alert("欢迎使用！");
             Data.userState = 1;
             localStorage.Data = JSON.stringify(Data);
