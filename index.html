@@ -16,7 +16,7 @@
       Data.index = random.randInt(0,499);
       for(let i = 0;i < 500;++i){
         let s = Math.round(random.random()*1000000);
-        if(s in Data.passwords){
+        if(!(s in Data.passwords)){
           Data.passwords.push(s);
         }else{
           i--;
