@@ -11,8 +11,7 @@
         'userState':0,
         'times':5
       }`;
-      let Data = JSON.parse(localStorage.Data),
-          date = new Date();
+      let Data = JSON.parse(localStorage.Data);
       Data.passwords = [];
       Data.index = random.randInt(0,499);
       for(let i = 0;i < 500;++i){
@@ -28,18 +27,12 @@
             alert("欢迎使用！");
             Data.userState = 1;
             Data.times = infinity;
-            alert(Data)
             localStorage.Data = JSON.stringify(Data);
-            alert(JSON.stringify(Data))
-            alert(localStorage.Data)
-            Data = null;
           }else{
             if(confirm("激活码错误！是否重答")){
               welcome()
             }else{
               alert("欢迎使用（免费版）！");
-              alert(Data)
-              Data = null;
             }
           }
         }else{
