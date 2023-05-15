@@ -1,8 +1,3 @@
-let userInput = document.querySelector("#UserInput"),
-    userSubmit = document.querySelector("#UserSubmit"),
-    mainPage = document.querySelector("#mainPage"),
-    hlep = document.querySelector("#help");
-
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
@@ -14,8 +9,8 @@ document.querySelector("#ConsoleCode").addEventListener("click",function(){
   }
 });
 //绑定事件添加iframe
-userSubmit.addEventListener("click",function(){
-  let v = userInput.value;
+jq("#UserSubmit").bind("click",function(){
+  let v = jq("#UserInput").self.value;
   let body = document.body,
       w = body.offsetWidth,
       h = body.offsetHeight;
@@ -24,5 +19,5 @@ userSubmit.addEventListener("click",function(){
     size:[w * 0.9,h * 0.9],
     dir:[w * 0.05,h * 0.05]
   });
-  page.show(document.body);
+  page.show(body);
 });
