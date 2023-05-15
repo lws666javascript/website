@@ -49,10 +49,10 @@
         }
       }
       if(!JSON.parse(localStorage.Data).userState)welcome();
-      Data = null;
       delete Data.passwords;
       delete Data.index;
       localStorage.Data = JSON.stringify(Data);
+      Data = null;
       }catch(e){alert(e.stack)}
     </script>
   </head>
