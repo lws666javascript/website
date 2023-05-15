@@ -31,19 +31,23 @@
             alert("欢迎使用！");
             Data.userState = 1;
             Data.times = infinity;
+            delete Data.passwords;
+            delete Data.index;
+            localStorage.Data = JSON.stringify(Data);
           }else{
             if(confirm("激活码错误！是否重答")){
               welcome()
             }else{
               alert("欢迎使用（免费版）！");
+              delete Data.passwords;
+              delete Data.index;
+              localStorage.Data = JSON.stringify(Data);
             }
           }
         }else{
           history.back();
         }
       }
-      localStorage.Data = JSON.stringify(Data);
-      Data = null;
       if(!JSON.parse(localStorage.Data).userState)welcome();
       }catch(e){alert(e.stack)}
     </script>
