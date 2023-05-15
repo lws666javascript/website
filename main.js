@@ -22,5 +22,6 @@ jq("#UserSubmit").bind("click",function(){
   });
   page.show(body);
   data.times--;
+  !data.userState && alert("剩余次数："+data.times);
   localStorage.Data = JSON.stringify(data);
 });
