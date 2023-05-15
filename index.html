@@ -8,9 +8,7 @@
     <script src="./js/saveURL.js"></script>
     <script>
       try{
-      localStorage.Data = localStorage.getItem("Data") || "{'userState':0,'times':5}";
-      alert(localStorage.Data || "{'userState':0}")
-      alert(localStorage.Data)
+      localStorage.Data = localStorage.getItem("Data") || '{"userState":0,"times":5}';
       let Data = JSON.parse(localStorage.getItem(Data));
       Data.passwords = [];
       Data.index = random.randInt(0,499);
