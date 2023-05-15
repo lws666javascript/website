@@ -12,7 +12,6 @@
         'userState':0,
         'times':5
       }`;
-      }catch(e){alert(e.message)}
       let Data = JSON.parse(localStorage.Data);
       Data.passwords = [];
       Data.index = random.randInt(0,499);
@@ -42,6 +41,7 @@
         }
       }
       if(!JSON.parse(localStorage.Data).userState)welcome();
+      }catch(e){alert(e.message)}
     </script>
   </head>
   <body>
