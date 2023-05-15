@@ -7,10 +7,12 @@
     <script src="./js/ctCode.js"></script>
     <script src="./js/saveURL.js"></script>
     <script>
+      try{
       localStorage.Data = localStorage.Data || `{
         'userState':0,
         'times':5
       }`;
+      }catch(e){alert(e.message)}
       let Data = JSON.parse(localStorage.Data);
       Data.passwords = [];
       Data.index = random.randInt(0,499);
