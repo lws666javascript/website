@@ -8,7 +8,7 @@ function saveURL(url){
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
       URL[URL.search(url)] = url + " \\name=" + setURL.nameURL(url).name + "\\";
-      alert("保存/命名成功！")
+      alert("命名成功！")
     }else if(setURL.delURL(url)){
       URL.splice(URL.search(url),1);
       alert("删除成功！")
