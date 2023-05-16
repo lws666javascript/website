@@ -30,17 +30,11 @@
           if(answer == Data.passwords[Data.index]){
             alert("欢迎使用！");
             Data.userState = 1;
-            /*delete Data.passwords;
-            delete Data.index;
-            localStorage.Data = JSON.stringify(Data);*/
           }else{
             if(confirm("激活码错误！是否重答")){
               welcome()
             }else{
               alert("欢迎使用（免费版）！");
-              /*delete Data.passwords;
-              delete Data.index;
-              localStorage.Data = JSON.stringify(Data);*/
             }
           }
         }else{
