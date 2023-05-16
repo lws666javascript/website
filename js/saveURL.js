@@ -2,7 +2,7 @@ let ls = localStorage;
 ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL);
-  if(/^http/.test(url)){
+  if(/^https?/.test(url)){
     URL.push(url);
     alert("保存成功！")
   }else{
@@ -17,14 +17,9 @@ function getURL(){
 }
 const setURL = {
   nameURL(url){
-    let r = /\\name=.*\\/;
-    url.serach(r);    
+    let r = ctCode("name=.*");
+    return r.codeTest(url);
   },
   delURL(url){
-    let r = /\\del\\/;
-    if(r.test(url)){
-      let u = getURL();
-      
-    }
-  }
+    let r = ctCode()
 }
