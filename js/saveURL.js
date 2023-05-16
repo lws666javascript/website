@@ -7,7 +7,7 @@ function saveURL(url){
       URL.push(url);
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
-      URL.push(url + " \\name=" + setURL.nameURL(url).name + "\\");
+      URL[URL.search(url)] = url + " \\name=" + setURL.nameURL(url).name + "\\";
       alert("保存/命名成功！")
     }else{
       alert("已经保存过了！");
