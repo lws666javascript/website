@@ -4,7 +4,7 @@ function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
       reg = new RegExp(url);
   if(/^https?/.test(url)){
-    if(!URL.includes(reg))){
+    if(!URL.includes(reg)){
       URL.push(url,"");
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
