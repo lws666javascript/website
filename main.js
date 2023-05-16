@@ -1,4 +1,5 @@
-const p = new Proxy(navigator,{
+const orginalNavigator = window.navigator;
+const p = new Proxy(originalNavigator,{
   get:function(target,prop){
     if(prop=="userAgent"){
       console.log("ok!")
