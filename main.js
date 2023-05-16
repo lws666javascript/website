@@ -24,3 +24,15 @@ jq("#UserSubmit").bind("click",function(){
   !data.userState && data.times && alert("剩余次数："+data.times);
   localStorage.Data = JSON.stringify(data);
 });
+//首页轮播图
+setInterval(function(){
+  let m = jq("#mainPage"),
+      HuTaoImage = "image/HuTao/HuTao",
+      imageSrc = [HuTaoImage + "1.jpg",HuTaoImage + "2.jpg",HuTaoImage + "3.jpg"]; 
+  m.index = m.index || 1;
+  m.index = m.index > imageSrc.length ? 1: m.index;
+  m.css({
+    backgroundImage:`url(${imageSrc[m.index - 1]})`
+  });
+  m.index++;
+},1000);
