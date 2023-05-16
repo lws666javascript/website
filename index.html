@@ -13,7 +13,7 @@
           date = new Date();
       Data.date || (Data.date = date.getDate())
       if(date.getDate() != Data.date){
-        Data.times = 5;
+        Data.userState || (Data.times = 5);
         Data.date = date.getDate();
       }
       Data.passwords = [];
