@@ -2,7 +2,7 @@ const orginalNavigator = window.navigator;
 const p = new Proxy(originalNavigator,{
   get:function(target,prop){
     if(prop=="userAgent"){
-      console.log("ok!")
+      alert("ok!")
       return "Mozilla/5.0 (Windows NT 10.0; Win64; x64;) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/"
     }
     return target[prop];
