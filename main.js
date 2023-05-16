@@ -1,3 +1,4 @@
+navigator
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
