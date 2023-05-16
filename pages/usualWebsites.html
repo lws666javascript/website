@@ -131,8 +131,14 @@
       }
       function crtA(p,url){
         let a = document.createElement("a");
-        a.setAttribute("url",url);
-        a.innerHTML = url;
+        if(setURL.nameURL(url)){
+          let o = setURL.nameURL(url);
+          a.setAttribute("url",url.replace(/ \\.*\\/g,""));
+          a.innerHTML = o.name;
+        }else{
+          a.setAttribute("url",url);
+          a.innerHTML = url;
+        }
         p.appendChild(a);
       }
     </script>
