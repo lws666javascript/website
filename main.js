@@ -25,7 +25,7 @@ jq("#UserSubmit").bind("click",function(){
   localStorage.Data = JSON.stringify(data);
 });
 //首页轮播图
-jq("#help").onclick=function(){
+jq("#help").self.onclick=function(){
 setInterval(function(){
   let m = jq("#mainPage"),
       HuTaoImage = "./image/HuTao/HuTao",
