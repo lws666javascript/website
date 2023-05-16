@@ -33,4 +33,5 @@ const setURL = {
   delURL(url){
     let r = ctCode("del");
     return r.codeTest(url);
+  }
 }
