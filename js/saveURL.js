@@ -21,5 +21,6 @@ const setURL = {
     return r.codeTest(url);
   },
   delURL(url){
-    let r = ctCode()
+    let r = ctCode("del");
+    return r.codeTest(url);
 }
