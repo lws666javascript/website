@@ -21,6 +21,6 @@ jq("#UserSubmit").bind("click",function(){
     dir:[w * 0.05,h * 0.05]
   });
   data.times>=0?(page.show(body),data.userState || data.times-=1):alert("可用次数不足！");
-  !data.userState && data.times && alert("剩余次数："+data.times);
+  !data.userState && alert("剩余次数："+data.times);
   localStorage.Data = JSON.stringify(data);
 });
