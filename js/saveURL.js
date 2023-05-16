@@ -3,7 +3,7 @@ ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL);
   if(/^https?/.test(url)){
-    if(!(url in URL)){
+    if(!(url.replace(/(\\.*\\)| /g,"") in URL)){
       URL.push(url);
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
