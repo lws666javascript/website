@@ -45,7 +45,8 @@ function jq(ele){
     },
     bind(e,f){
       //绑定事件，传入this参数，便于事件处理
-      this.self.addEventListener(e,f.bind(this));
+      let fun = f.bind(this)
+      this.self.addEventListener(e,fun);
       return this;
     },
     animation(f){
