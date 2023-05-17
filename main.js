@@ -42,7 +42,7 @@ setInterval(function(){
       HuTaoImage = "./image/HuTao/HuTao",
       imageSrc = [HuTaoImage + "1.jpg",HuTaoImage + "2.jpg",HuTaoImage + "3.jpg"]; 
   m.index = m.index || 1;
-  m.index = m.index > imageSrc.length ? 1: m.index;
+  m.index = (m.index > imageSrc.length) ? 1: m.index;
   m.css({
     backgroundImage:`url(${imageSrc[m.index - 1]})`
   });
