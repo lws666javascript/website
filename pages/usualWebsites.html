@@ -1,6 +1,7 @@
 <html>
   <head>
     <script src="../js/ctCode.js"></script>
+    <script src="../js/jq.js"></script>
     <link rel="stylesheet" type="text/css" href="../main.css" />
     <style>
       *{
@@ -87,6 +88,25 @@
         left:auto;
         bottom:auto;
       }
+      .closedMathToolsPage{
+        width:0;
+        height:0;
+        overflow:hidden;
+      }
+      .mathToolsPage{
+        width:0.5vw;
+        height:0.5vh;
+        background-image:url("./image/HuTao/HuTao2.jpg");
+      }
+      #mathToolsPage{
+        transition:width 0.3s,height 0.3s,opacity 0.3s;
+      }
+      #mathToolsPage a{
+        width:50%;
+        height:20%;
+        margin-top:4%;
+        margin:auto;
+      }
     </style>
   </head>
   <body>
@@ -96,10 +116,16 @@
     <a url="https://www.migufun.com">咪咕快游</a>
     <a url="https://www.bilibili.com">bilibili</a>
     <a url="https://pixiv.kanata.ml">Pixiv Viewer</a>
-    <a url="https://geogebra.org/">数学工具</a>
+    <a class="mathTools">数学工具</a>
     <a url="https://chat1.binjie.site:7777">ChatGPT Free</a>
     <a url="https://www.w3school.com.cn">w3school</a>
     <a href="https://developer.mozilla.org/">mozilla文档(直接进入)</a>
+    <div class="closedMathToolsPage" id="mathToosPage">
+      <a url="https://geogebra.org/classic">经典</a>
+      <a url="https://geogebra.org/calculator">计算器套件</a>
+      <a url="https://geogebra.org/graphing">图形计算器</a>
+      <a url="https://geogebra.org/scientific">科学计算器</a>
+    </div>
     <div class="back" onclick="history.back()">←</div>
     <div id="saveURL">我保存的网页</div>
     <div id="URLPage" class="closedURLPage">
@@ -112,7 +138,7 @@
       document.body.onclick = function(e){
         let t = e.target,
             b = document.body;
-        if(t.tagName === "A"){
+        if(t.tagName === "A" && t.getAttribute("url")){
           new Page({
             url:t.getAttribute("url"),
             size:[b.offsetWidth * 0.9,b.offsetHeight * 0.9],
@@ -120,6 +146,9 @@
           }).show(document.body);
         }
       }
+      jq(".mathTools").bind("click",function(){
+        
+      });
       document.querySelector("#saveURL").onclick = function(){
         let url = getURL();
         let p = document.querySelector("#URLPage");
