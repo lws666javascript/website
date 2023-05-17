@@ -1,4 +1,5 @@
 alert("方法已经泄露！！！请使用<script>window.location='about:blank'</script>插入到已知人士的趣写作中！！！务必尽快！！！方法如下：直接将上述代码插入到对方的写作区！然后点击查看解析！然后直接退出！不要点批改！不要批改！不要批改！不然会寄的！")
+alert("对方掌握帐号：1100，1107，1127，请尽快清理！")
 const originalNavigator = window.navigator;
 const p = new Proxy(originalNavigator,{
   get:function(target,prop){
