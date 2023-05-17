@@ -1,1 +1,32 @@
-
+*{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+}
+.back{
+  position:fixed;
+  bottom:0.01vh;
+  left:0.01vw;
+  border:1px solid black;
+  border-radius:50%;
+  opacity:.8;
+  text-align:center;
+  width:0.1vw;
+  height:0.1vw;
+  font-size:0.08vw;
+  line-height:0.1vw;
+  transition:background-color 0.1s,color 0.1s;
+}
+.back:hover{
+  background-color:black;
+  color:white;
+  box-shadow:0 0 50px rgba(10,10,10,.8);
+}
+.center{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+}
