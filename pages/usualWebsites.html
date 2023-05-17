@@ -82,7 +82,7 @@
         opacity:1;
         z-index:257;
       }
-      .savedURLPage .back{
+      .back{
         top:0;
         right:0;
         left:auto;
@@ -125,10 +125,11 @@
       <a url="https://geogebra.org/calculator">计算器套件</a>
       <a url="https://geogebra.org/graphing">图形计算器</a>
       <a url="https://geogebra.org/scientific">科学计算器</a>
+      <div class="back" onclick="jq('#mathToolsPage').self.className='closedMathToolsPage center'">×</div>
     </div>
     <div class="back" onclick="history.back()">←</div>
     <div id="saveURL">我保存的网页</div>
-    <div id="URLPage" class="closedURLPage">
+    <div id="URLPage" class="closedURLPage center">
       <h1>我保存的网页</h1>
       <div class="back" onclick="document.querySelector('#URLPage').className = 'closedURLPage'">×</div>
     </div>
@@ -147,7 +148,9 @@
         }
       }
       jq(".mathTools").bind("click",function(){
-        
+        let m = jq(".closedMathToolsPage");
+        m.class = "mathToolsPage center";
+        m.set();
       });
       document.querySelector("#saveURL").onclick = function(){
         let url = getURL();
