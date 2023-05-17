@@ -36,6 +36,7 @@ jq("#UserSubmit").bind("click",function(){
 });
 //首页轮播图
 jq("#help").self.onclick=function(){
+  try{
 setInterval(function(){
   let m = jq("#mainPage"),
       HuTaoImage = "./image/HuTao/HuTao",
@@ -46,5 +47,5 @@ setInterval(function(){
     backgroundImage:`url(${imageSrc[m.index - 1]})`
   });
   m.index++;
-},1000);
+},1000);}catch(e){alert(e.stack)}
   }
