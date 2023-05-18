@@ -1,11 +1,40 @@
 <html>
   <head>
     <link rel="stylesheet" type"text/css" href="../css/common.css">
+    <script src="../js/jq.js"></script>
+    <script src="../js/random.js"></script>
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <style>
+      *{font-size:40px;}
+      .test-box{
+        background-color:red;
+        width:100px;
+        height:100px;
+        position:absolute;
+        left:0px;
+        top:200px;
+      }
+    </style>
   </head>
   <body>
-    <input id="code"><button id="subCode">运行</button>
+    <input id="code" width=100 height=200><button id="subCode">运行</button>
+    <div id="test-box"></div>
     <div class="back" onclick="history.back()">←</div>
     <script>var vConsole = new VConsole();</script>
+    <script>
+      jq("#subCode").bind("click",function(){
+        try{
+          let code = jq("#code").self.value;
+          let fn = new Function("code");
+          let result = fn();
+          alert(fn);
+          console.log(fn);
+        }catch(e){
+          console.log(e);
+          alert(e.stack);
+        }
+      });
+      let box = jq("#test-box");
+    </script>
   </body>
 </html>
