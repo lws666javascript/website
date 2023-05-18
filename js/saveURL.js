@@ -5,7 +5,7 @@ function saveURL(url){
       reg = new RegExp(url);
   if(/^https?/.test(url)){
     if(!URL.includes(reg)){
-      URL.push(url,"");
+      URL.push(url);
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
       URL[URL.search(url.replace(/\\.*\\/,""))] = url + " \\name=" + setURL.nameURL(url).name + "\\";
