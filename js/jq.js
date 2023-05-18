@@ -118,6 +118,13 @@ jq.create = function(tag,o){
   o.css && j.css();
   return j;
 }
+jq.get = function(){
+  let jqEle = [];
+  for(let v of arguments){
+    jqEle.push(jq(v));
+  }
+  return jqEle;
+}
 //常用元素的引用
 window.addEventListener("onload",function(){
   jq.body = jq(document.body);
