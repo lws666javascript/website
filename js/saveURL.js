@@ -4,15 +4,18 @@ function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
       murl = url.replace(/\.*\/g,""),
       reg = new RegExp(murl);
+  function query(v){
+    return reg.test(query);
+  }
   if(/^https?/.test(url)){
-    if(!URL.some(function(v){return reg.test(v)})){
+    if(!URL.some(query)){
       URL.push(url);
       alert("保存成功！");
     }else if(setURL.nameURL(url)){
-      URL[URL.findIndex(function(v){return reg.test(v)})] = url + "\\name=" + setURL.nameURL(url).name + "\\";
+      URL[URL.findIndex(query)] = url + "\\name=" + setURL.nameURL(url).name + "\\";
       alert("命名成功！")
     }else if(setURL.delURL(url)){
-      URL.splice(URL.findIndex(function(v){return reg.test(v)}),1);
+      URL.splice(URL.findIndex(query),1);
       alert("删除成功！")
     }else{
       alert("已经保存过了！");
