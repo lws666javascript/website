@@ -53,7 +53,9 @@ function jq(ele){
       function anm(t,f){
         if(f(t)){
           f(t);
-          requestAnimationFrame(arguments.callee);
+          requestAnimationFrame(function(){
+            anm(t,f);
+          });
         } 
       }
       requestAnimationFrame(function(){
