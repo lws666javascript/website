@@ -25,10 +25,9 @@
       jq("#subCode").bind("click",function(){
         try{
           let code = jq("#code").self.value;
-          let fn = new Function("code");
-          let result = fn();
-          alert(fn());
-          console.log(fn());
+          let result = eval(code);
+          alert(result);
+          console.log(result);
         }catch(e){
           console.log(e);
           alert(e.stack);
