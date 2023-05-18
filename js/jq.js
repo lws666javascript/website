@@ -23,12 +23,12 @@ function jq(ele){
       }
       return o;
     },
-    set(){
+    set(o){
       //设置属性
       let s = this.self;
-      s.id = this.id;
-      s.className = this.class;
-      s.innerHTML = this.inner;
+      s.id = o.id || this.id;
+      s.className = o.class || this.class;
+      s.innerHTML = o.inner || this.inner;
       //每次返回this，便于链式调用
       return this;
     },
