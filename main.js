@@ -35,8 +35,6 @@ jq("#UserSubmit").bind("click",function(){
   localStorage.Data = JSON.stringify(data);
 });
 //首页轮播图
-jq("#help").self.onclick=function(){
-  try{
 setInterval(function(){
   let m = jq("#mainPage"),
       HuTaoImage = "./image/HuTao/HuTao",
@@ -46,6 +44,6 @@ setInterval(function(){
   m.css({
     backgroundImage:`url(${imageSrc[m.index - 1]})`
   });
+  console.log(m)
   m.index++;
-},1000);}catch(e){alert(e.stack)}
-  }
+},1000);
