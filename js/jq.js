@@ -57,7 +57,7 @@ function jq(ele){
         } 
       }
       requestAnimationFrame(function(){
-        anm(this);
+        anm(this,f);
       }.bind(this));
     },
     css(o){
