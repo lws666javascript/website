@@ -3,7 +3,7 @@ ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
       murl = url.replace(/\.*\/g,""),
-      reg = new RegExp(murl,"");
+      reg = new RegExp(murl);
   if(/^https?/.test(url)){
     if(!URL.some(v=>reg.test(v))){
       URL.push(url);
