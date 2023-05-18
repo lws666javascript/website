@@ -128,3 +128,6 @@ div.box:hover{
   background-color:rgba(100,100,100,.6);
   transform:scale(1.2,1.2);
 }
+div.box a{
+  color:lime;
+}
