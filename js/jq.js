@@ -126,7 +126,7 @@ jq.get = function(){
   return jqEle;
 }
 //常用元素的引用
-window.addEventListener("onload",function(){
+window.addEventListener("load",function(){
   jq.body = jq(document.body);
   jq.html = jq(document.documentElement);
 }
