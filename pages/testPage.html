@@ -27,8 +27,8 @@
           let code = jq("#code").self.value;
           let fn = new Function("code");
           let result = fn();
-          alert(fn);
-          console.log(fn);
+          alert(fn());
+          console.log(fn());
         }catch(e){
           console.log(e);
           alert(e.stack);
