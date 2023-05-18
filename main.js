@@ -39,11 +39,10 @@ setInterval(function(){
   let m = jq("#mainPage"),
       HuTaoImage = "./image/HuTao/HuTao",
       imageSrc = [HuTaoImage + "1.jpg",HuTaoImage + "2.jpg",HuTaoImage + "3.jpg"]; 
-  m.index = m.index || 1;
-  m.index = (m.index > imageSrc.length) ? 1: m.index;
+  m.self.index = m.self.index || 1;
+  m.self.index = (m.self.index > imageSrc.length) ? 1: m.self.index;
   m.css({
     backgroundImage:`url(${imageSrc[m.index - 1]})`
   });
-  console.log(m)
-  m.index++;
-},1000);
+  m.self.index += 1;
+},5000);
