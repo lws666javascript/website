@@ -11,6 +11,12 @@ function jq(ele){
       this.id = this.self.id;
       this.class = this.self.className;
       this.inner = this.self.innerHTML;
+      this.value = this.self.value;
+      this.attribute = {
+        get:this.self.getAttribute,
+        set:this.self.setAttribute,
+        remove:this.self.setAttribute
+      };
       this.update();
       return this;
     },
@@ -33,6 +39,7 @@ function jq(ele){
       s.id = o && o.id || this.id;
       s.className = o && o.className || this.class;
       s.innerHTML = o && o.inner || this.inner;
+      s.value = o && o.value || this.value;
       //每次返回this，便于链式调用
       return this;
     },
