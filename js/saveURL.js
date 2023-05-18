@@ -2,7 +2,7 @@ let ls = localStorage;
 ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
-      reg = new RegExp(url);
+      reg = new RegExp(url.replace(/\\.*\\/,"").replace(" ",""));
   if(/^https?/.test(url)){
     if(!URL.includes(reg)){
       URL.push(url);
