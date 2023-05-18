@@ -42,7 +42,7 @@ setInterval(function(){
   m.self.index = m.self.index || 1;
   m.self.index = (m.self.index > imageSrc.length) ? 1: m.self.index;
   m.css({
-    backgroundImage:`url(${imageSrc[m.index - 1]})`
+    backgroundImage:`url(${imageSrc[m.self.index - 1]})`
   });
   m.self.index += 1;
 },5000);
