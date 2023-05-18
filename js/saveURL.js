@@ -11,7 +11,7 @@ function saveURL(url){
       URL[URL.search(url.replace(/\\.*\\/,""))] = url + " \\name=" + setURL.nameURL(url).name + "\\";
       alert("命名成功！")
     }else if(setURL.delURL(url)){
-      URL.splice(URL.search(url.replace(/\\.*\\/,"")),1);
+      URL.splice(URL.search(url.replace(/\\.*\\/,"")) - 1,1);
       alert("删除成功！")
     }else{
       alert("已经保存过了！");
