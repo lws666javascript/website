@@ -5,14 +5,14 @@ function saveURL(url){
       murl = url.replace(/\.*\/g,""),
       reg = new RegExp(murl);
   if(/^https?/.test(url)){
-    if(!URL.some(v=>reg.test(v))){
+    if(!URL.some(function(v){return reg.test(v)})){
       URL.push(url);
       alert("保存成功！");
     }else if(setURL.nameURL(url)){
-      URL[URL.findIndex(v=>reg.test(v))] = url + "\\name=" + setURL.nameURL(url).name + "\\";
+      URL[URL.findIndex(function(v){return reg.test(v)})] = url + "\\name=" + setURL.nameURL(url).name + "\\";
       alert("命名成功！")
     }else if(setURL.delURL(url)){
-      URL.splice(URL.findIndex(v=>reg.test(v)),1);
+      URL.splice(URL.findIndex(function(v){return reg.test(v)}),1);
       alert("删除成功！")
     }else{
       alert("已经保存过了！");
