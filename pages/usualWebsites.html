@@ -170,11 +170,11 @@
         for(let v of url){
           if(!p.created){
             crtA(p,v);
-            p.created = 1;
           }else{
             break;
           }
         }
+        p.created = 1;
         p.className = "savedURLPage";
       }
       function crtA(p,url){
