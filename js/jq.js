@@ -14,6 +14,10 @@ function jq(ele){
       this.update();
       return this;
     },
+    toggleClass(c){
+      this.self.classList.toggle(c);
+      return this;
+    },
     getStyle(){
       let c = getComputedStyle(this.self);
       let o = {};
