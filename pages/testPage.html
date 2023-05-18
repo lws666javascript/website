@@ -5,7 +5,7 @@
     <script src="../js/random.js"></script>
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <style>
-      input#code,button#subCode{
+      #code,#subCode{
         font-size:40px;
       }
       #test-box{
@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-    <input id="code" width=200 height=400><button id="subCode">运行</button>
+    <textarea id="code" cols=200 rows=400></textarea><button id="subCode">运行</button>
     <div id="test-box"></div>
     <div class="back" onclick="history.back()">←</div>
     <script>var vConsole = new VConsole();</script>
