@@ -8,6 +8,7 @@ class Page{
     this.iframe = null;
   }
   show(p){
+    alert("陈品宇不要上课玩！！！！！！！！！！！！！！");
     let e = document.createElement("div");
     e.className = "adding-iframe-page center";
     p.appendChild(e);
