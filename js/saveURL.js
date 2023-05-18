@@ -2,13 +2,13 @@ let ls = localStorage;
 ls.savedURL = ls.savedURL || "[]";
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
-      reg = new RegExp(url.replace(/\\.*\\/,"").replace(" ",""));
+      reg = new RegExp(url.replace(/\\.*\\/,""));
   if(/^https?/.test(url)){
     if(!URL.includes(reg)){
       URL.push(url);
       alert("保存成功！")
     }else if(setURL.nameURL(url)){
-      URL[URL.search(url.replace(/\\.*\\/,""))] = url + " \\name=" + setURL.nameURL(url).name + "\\";
+      URL[URL.search(url.replace(/\\.*\\/,""))] = url + "\\name=" + setURL.nameURL(url).name + "\\";
       alert("命名成功！")
     }else if(setURL.delURL(url)){
       URL.splice(URL.search(url.replace(/\\.*\\/,"")) - 1,1);
