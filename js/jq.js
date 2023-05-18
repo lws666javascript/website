@@ -33,7 +33,7 @@ function jq(ele){
       }
       return o;
     },
-    set(){
+    set(o){
       //设置属性
       let s = this.self;
       s.id = o && o.id || this.id;
