@@ -3,11 +3,25 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <script src="../js/jq.js"></script>
     <script src="../js/random.js"></script>
+    <style src="../js/ctCode.js"></script>
+    <style>
+      
+    </style>
   </head>
   <body>
-    <input><button>生成</button><button>帮助</button>
+    输入字体<input><button>生成</button><button>帮助</button>
     <div class="back" onclick="history.back()">←</div>
     <script>
+      function ctText(o){
+        let p =jq.create("p"),
+            text = o.text,
+            time = o.time;
+        p.inner = text;
+        p.time = time;
+        p.class = "text";
+        p.set();
+        jq.body.append(p);
+      }
       
     </script>
   </body>
