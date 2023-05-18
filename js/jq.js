@@ -119,5 +119,7 @@ jq.create = function(tag,o){
   return j;
 }
 //常用元素的引用
-jq.body = jq(document.body);
-jq.html = jq(document.documentElement);
+window.addEventListener("onload",function(){
+  jq.body = jq(document.body);
+  jq.html = jq(document.documentElement);
+}
