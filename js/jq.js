@@ -129,4 +129,4 @@ jq.get = function(){
 window.addEventListener("load",function(){
   jq.body = jq(document.body);
   jq.html = jq(document.documentElement);
-}
+});
