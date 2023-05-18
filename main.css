@@ -122,6 +122,7 @@ div.box{
   margin-top:30px;
   margin-left:4%;
   transition:width 0.8s,height 0.8s,transform 0.8s;
+  color:lime;
 }
 div.box:hover{
   background-color:rgba(100,100,100,.6);
