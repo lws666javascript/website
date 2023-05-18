@@ -58,6 +58,9 @@
       <div class="box">
         <a href="javascript:alert('该项目暂时废弃！')">绚丽字幕生成器</a>
       </div>
+      <div class="box">
+        <a href="./pages/testPage.html">测试页面</a>
+      </div>
     </div>
     <div id="tools">
       <button onclick="history.back()">返回</button>
@@ -66,7 +69,7 @@
         <span>请输入完整网址：</span><input id="UserInput">
         <button id="UserSubmit">生成网页</button>
         <button id="saveUserURL" onclick="saveURL(jq('#UserInput').self.value)">保存</button>
-        <button id="help">帮助</button>
+        <button id="help" alert(`在输入框中输入url即可生成网页！\n点击保存即可保存到(常用网址/我保存的网页中)\n一下有部分代码可以使用：\n1.\\name=名称\\可以修改保存网页的名称`)>帮助</button>
       </div>
     </div>
     <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
