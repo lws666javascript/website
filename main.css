@@ -134,6 +134,6 @@ div.box a{
   color:black;
   transition:color 0.8s;
 }
-duv.box a:hover{
+duv.box:hover a{
   color:skyblue;
 }
