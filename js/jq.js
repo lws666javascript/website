@@ -65,6 +65,7 @@ function jq(ele){
       requestAnimationFrame(function(){
         anm(this,f);
       }.bind(this));
+      return this;
     },
     css(o){
       //css样式修改
