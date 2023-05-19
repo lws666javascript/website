@@ -6,7 +6,7 @@ function saveURL(url){
       murl = url.replace(/\.*\/g,""),
       reg = new RegExp(murl);
   function query(v){
-    return reg.test(query);
+    return reg.test(v);
   }
   if(/^https?/.test(url)){
     if(!URL.some(query)){
