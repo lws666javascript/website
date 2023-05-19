@@ -3,9 +3,13 @@
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <script src="../js/jq.js"></script>
     <script src="../js/random.js"></script>
+    <style>#test-page{width:100%;height:100%;z-index:255;}</style>
   </head>
   <body>
-    
+    <h1>反应力小测试</h1>
+    <div id="introduce">点击开始按钮后，页面中会出现若干个圆点，然后迅速消失，测试时长为30s，结束后统计在规定时间内点击到的圆点数量</div>
+    <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
+    <div id="test-page" class="center"></div>
   </body>
 </html>
