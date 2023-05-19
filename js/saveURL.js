@@ -12,7 +12,7 @@ function saveURL(url){
       URL.push(url);
       alert("保存成功！");
     }else if(setURL.nameURL(url)){
-      URL[URL.findIndex(query)] = url + "\\name=" + setURL.nameURL(url).name + "\\";
+      URL[URL.findIndex(query)] = url;
       alert("命名成功！")
     }else if(setURL.delURL(url)){
       URL.splice(URL.findIndex(query),1);
