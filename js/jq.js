@@ -135,8 +135,8 @@ jq.create = function(tag,o){
   j.class = o && o.class || "";
   j.inner = o && o.inner || "";
   j.set();
-  o.size && j.size();
-  o.css && j.css();
+  o && o.size && j.size();
+  o && o.css && j.css();
   return j;
 }
 jq.get = function(){
