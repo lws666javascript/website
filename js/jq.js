@@ -125,6 +125,9 @@ function jq(ele){
       let ele = this.self.querySelector(txt);
       return jq(ele);
     },
+    parent(){
+      return jq(this.self.parentNode);
+    },
     toString(){
       return "[Object jqElementObject]";
     }
