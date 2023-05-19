@@ -5,11 +5,12 @@
     <script src="../js/random.js"></script>
     <style>
       #test-page{width:100%;height:100%;z-index:255;display:none;}
-      .circle{border:1px solid black;border-radius:50%;width:20px;height:20px;}
+      .circle{position:absolute;border:1px solid black;border-radius:50%;width:20px;height:20px;}
     </style>
   </head>
   <body>
     <h1>反应力小测试</h1>
+    <siv id="point"></div>
     <div id="introduce">点击开始按钮后，页面中会出现若干个圆点，然后迅速消失，测试时长为30s，结束后统计在规定时间内点击到的圆点数量</div>
     <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
@@ -18,7 +19,7 @@
       const PAGE = jq("#test-page");
       const BUTTON = jq("button");
       BUTTON.bind("click",function(){
-        PAGE.css({display:block});
+        PAGE.css({display:'block'});
         let count = 0;
         document.onclick = function(e){
           let t = e.target;
@@ -28,10 +29,24 @@
           }
         }
         let timer = setInterval(function(){
+          let num = random.randInt(1,5);
+          for(let i=0;i<num;i++){
+            let p = jq.create("div",{class:"circle"});
+            let r1 = random.randInt(20,100);
+            p.resize([r1,r1]);
+            p.move([random.randInt(0,700-p.w),random.randInt(0,1300-p.h)]);
+            let r = random.randInt(0,255),
+                g = random.randInt(0,255),
+                b = random.randInt(0,255);
+            p.css({backgroundColor:`rgb(${r},${g},${b})`});
+            PAGE.append(p);
+          }
           
         },1000)
         setTimeout(function(){
           clearInterval(timer);
+          PAGE.css({display:'none'});
+          jq("#point").set({inner:`您的分数：${count}`})
         },30000);
       });
       
