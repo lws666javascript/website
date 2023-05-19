@@ -28,6 +28,13 @@ function jq(ele){
           _this.data = _this.self.jqData;
           return _this;
         },
+        item(){
+          let a = [];
+          for(let i in _this.data){
+            a.push(i);
+          }
+          return a;
+        },
         set(key,value){
           _this.data[key] = value;
           _this.self.jqData = _this.data;
