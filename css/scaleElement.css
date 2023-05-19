@@ -1,0 +1,23 @@
+.scale-element{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+  margin:auto;
+  translation:width 0.3s,height 0.3s,opacity 0.3s;
+  border:1px solid black;
+}
+.closed-scale-ele{
+  width:0;
+  height:0;
+  opacity:0;
+  overflow:hidden;
+  visible:hidden;
+}
+.showed-scale-ele{
+  width:50vw;
+  height:50vh;
+  opacity:1;
+  background-color:white;
+}
