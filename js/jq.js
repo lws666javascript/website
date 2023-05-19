@@ -121,6 +121,10 @@ function jq(ele){
       }
       return this;
     },
+    find(txt){
+      let ele = this.self.querySelector(txt);
+      return jq(ele);
+    },
     toString(){
       return "[Object jqElementObject]";
     }
