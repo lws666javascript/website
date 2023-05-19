@@ -33,11 +33,13 @@
           let ele = jq("#code").self,
               code = ele.value;
           if(/^html:/.test(code)){
+            let code = code.replace("\\clear\\","");
             let d = jq.create("div");
             d.inner = code.replace(/^html:/,"");
             d.set();
             jq.body.append(d);
           }else{
+            let code = code.replace("\\clear\\","");
             let result = eval(code);
             alert(result);
             console.log(result);
