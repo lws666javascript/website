@@ -21,8 +21,9 @@
     <script>
       const PAGE = jq("#test-page");
       const BUTTON = jq("button");
-      const DIFFICULTY = jq("#difficulty").value;
+      const DIFFICULTY = jq("#difficulty");
       BUTTON.bind("click",function(){
+        let difficulty = DIFFICULTY.value;
         PAGE.css({display:'block'});
         let count = 0;
         document.onclick = function(e){
@@ -54,7 +55,7 @@
                 b = random.randInt(0,255);
             p.css({backgroundColor:`rgb(${r},${g},${b})`});
             PAGE.append(p);
-            setTimeout(function(){p.remove()},DIFFICULTY*1000)
+            setTimeout(function(){p.remove()},difficulty*1000)
           }          
         },1000)
         setTimeout(function(){
