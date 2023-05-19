@@ -28,7 +28,7 @@
         let difficulty = jq("#difficulty").value;
         PAGE.css({display:'block'});
         let count = 0;
-        document.onclick = function(e){
+        document.ontouchstart = function(e){
           let t = e.target;
           if(t.className === "circle"){
             let j = jq(t);
@@ -45,6 +45,7 @@
             count++;
           }
         }
+        document.onclick = document.ontouchstart;
         let timer = setInterval(function(){
           let num = random.randInt(1,3);
           for(let i=0;i<num;i++){
