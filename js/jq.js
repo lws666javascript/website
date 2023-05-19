@@ -112,6 +112,18 @@ function jq(ele){
       });
       return this;
     },
+    hidden(){
+      this.css({
+        display:"none"
+      });
+      return this;
+    },
+    show(){
+      this.css({
+        display:"block"
+      });
+      return this;
+    },
     remove(){
       //删除元素
       this.self.remove();
