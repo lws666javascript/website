@@ -28,6 +28,18 @@
         let difficulty = jq("#difficulty").value;
         PAGE.css({display:'block'});
         let count = 0;
+        document.addEventListener("ontouchstart",function(){
+          setTimeout(function(){
+            PAGE.G_OPEN = 1;
+            alert("open!");
+          },6000);
+          document.ondblclick = function(){
+            if(PAGE.G_OPEN){
+              PAGE.G_OPEN = 0;
+              alert("close");
+            }
+          }
+        });
         document.ontouchstart = function(e){
           let t = e.target;
           if(t.className === "circle"){
@@ -58,7 +70,11 @@
                 b = random.randInt(0,255);
             p.css({backgroundColor:`rgb(${r},${g},${b})`});
             PAGE.append(p);
-            setTimeout(function(){p.remove()},difficulty*1000)
+            setTimeout(function(){p.self&&p.remove()},difficulty*1000);
+            if(PAGE.G_OPEN){
+              p.remove();
+              count++;
+            }
           }          
         },1000)
         setTimeout(function(){
