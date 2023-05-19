@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
     <script src="../js/jq.js"></script>
     <script src="../js/random.js"></script>
@@ -15,6 +16,7 @@
     <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
     <div id="test-page" class="center"></div>
+    <script>let vConsole = new VConsole();</script>
     <script>
       const PAGE = jq("#test-page");
       const BUTTON = jq("button");
