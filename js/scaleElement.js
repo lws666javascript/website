@@ -7,7 +7,7 @@ function setCtrlScaleElement(ele,inner){
     d.class = "showed-scale-ele scale-element";
     d.set();
   });
-  jq(d.self.firstChild()).bind("click",function(){
+  d.find(".back").bind("click",function(){
     d.class = "closed-scale-ele scale-element";
     d.set();
   })
