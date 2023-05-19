@@ -9,7 +9,8 @@
   left:1vw;
   border:1px solid black;
   border-radius:50%;
-  opacity:.8;
+  background-color:white;
+  color:black;
   text-align:center;
   width:10vw;
   height:10vw;
