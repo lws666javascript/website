@@ -21,7 +21,7 @@
     <script>
       const PAGE = jq("#test-page");
       const BUTTON = jq("button");
-      jq("#difficulty").bind("change",function(){
+      jq("#difficulty").bind("input",function(){
         jq("label").set({inner:"当前难度：" + this.value});
       })
       BUTTON.bind("click",function(){
