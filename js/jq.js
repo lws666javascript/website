@@ -143,8 +143,8 @@ jq.create = function(tag,o){
   j.class = o && o.class || "";
   j.inner = o && o.inner || "";
   j.set();
-  o && o.size && j.size();
-  o && o.css && j.css();
+  o && o.size && j.resize(o.size);
+  o && o.css && j.css(o.css);
   return j;
 }
 jq.get = function(){
