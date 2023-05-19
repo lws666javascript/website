@@ -31,9 +31,16 @@
       jq("#subCode").bind("click",function(){
         try{
           let code = jq("#code").self.value;
-          let result = eval(code);
-          alert(result);
-          console.log(result);
+          if(/^html:/.test(code)){
+            let d = jq.create("div");
+            d.inner = code;
+            d.set();
+            jq.body.append(d);
+          }else{
+            let result = eval(code);
+            alert(result);
+            console.log(result);
+          }
         }catch(e){
           console.log(e);
           alert(e.stack);
