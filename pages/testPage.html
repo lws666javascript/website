@@ -31,20 +31,20 @@
       jq("#subCode").bind("click",function(){
         try{
           let ele = jq("#code").self,
-              code = ele.value;
-          if(/^html:/.test(code)){
-            let code = code.replace("\\clear\\","");
+              cd = ele.value;
+          if(/^html:/.test(cd)){
+            let code = cd.replace("\\clear\\","");
             let d = jq.create("div");
             d.inner = code.replace(/^html:/,"");
             d.set();
             jq.body.append(d);
           }else{
-            let code = code.replace("\\clear\\","");
+            let code = cd.replace("\\clear\\","");
             let result = eval(code);
             alert(result);
             console.log(result);
           }
-          if(/\\clear\\/.test(code)){
+          if(/\\clear\\/.test(cd)){
             ele.value = "";
           }
         }catch(e){
