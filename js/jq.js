@@ -11,6 +11,9 @@ function jq(ele){
       this.id = this.self.id;
       this.class = this.self.className;
       this.inner = this.self.innerHTML;
+      this.bind("input",function(){
+        this.value = this.self.value;
+      });
       this.value = this.self.value;
       this.attribute = {
         get:this.self.getAttribute,
