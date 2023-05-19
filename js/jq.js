@@ -5,6 +5,7 @@ function jq(ele){
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
+    data:{},
     init(){
       //初始化对象属性
       this.type = this.self.tagName;
