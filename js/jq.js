@@ -124,9 +124,9 @@ function jq(ele){
 jq.create = function(tag,o){
   let e = document.createElement(tag);
   let j = jq(e);
-  j.id = o?.id || "";
-  j.class = o?.class || "";
-  j.inner = o?.inner || "";
+  j.id = o && o.id || "";
+  j.class = o && o.class || "";
+  j.inner = o && o.inner || "";
   j.set();
   o.size && j.size();
   o.css && j.css();
