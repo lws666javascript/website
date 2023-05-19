@@ -3,7 +3,7 @@ const random = {
         return Math.random();
     },
     randInt(x,y){
-        return Math.round((Math.random() * 2 - 0.5) * (y - x) + x - 0.5);
+        return Math.round(Math.random() * (y - x) + x);
     },
     choice(arr){
         return arr[0,this.randInt(0,arr.length - 1)];
