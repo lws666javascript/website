@@ -71,6 +71,10 @@ function jq(ele){
       this.self.addEventListener(e,fun);
       return this;
     },
+    click(f){
+      this.bind("click",f);
+      return this;
+    },
     animation(f){
       function anm(t,f){
         if(f(t)){
