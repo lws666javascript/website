@@ -26,7 +26,17 @@
         document.onclick = function(e){
           let t = e.target;
           if(t.className === "circle"){
-            t.remove();
+            let j = jq(t);
+            let w = j.w;
+            j.animation(function(t){
+              if(j.w < 1.5*w){
+                j.resize([j.w+5,j.w+5]);
+                return true;
+              }else{
+                j.remove();
+                return false;
+              }
+            })
             count++;
           }
         }
@@ -42,7 +52,7 @@
                 b = random.randInt(0,255);
             p.css({backgroundColor:`rgb(${r},${g},${b})`});
             PAGE.append(p);
-            setTimeout(function(){p.remove()},500)
+            setTimeout(function(){p.remove()},700)
           }          
         },1000)
         setTimeout(function(){
