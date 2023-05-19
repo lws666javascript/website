@@ -29,11 +29,11 @@
             let j = jq(t);
             let w = j.w;
             j.animation(function(t){
-              if(j.w < 1.5*w){
-                j.resize([j.w+5,j.w+5]);
+              if(t.w < 1.5*w){
+                t.resize([t.w+5+"px",t.w+5+"px"]);
                 return true;
               }else{
-                j.remove();
+                t.remove();
                 return false;
               }
             })
