@@ -5,8 +5,9 @@ function jq(ele){
   const o = {
     //对元素的引用，使jq对象与DOM对象链接
     self:jqE,
-    data:{},
     init(){
+      //创建this的引用
+      const _this = this;
       //初始化对象属性
       this.type = this.self.tagName;
       this.id = this.self.id;
@@ -21,6 +22,27 @@ function jq(ele){
         set:this.self.setAttribute,
         remove:this.self.setAttribute
       };
+      this.data = {
+        init(){
+          _this.self.jqData = _this.self.jqData || {};
+          _this.data = _this.self.jqData;
+          return _this;
+        },
+        set(key,value){
+          _this.data[key] = value;
+          _this.self.jqData = _this.data;
+          return _this;
+        },
+        remove(key){
+          delete _this.data[key];
+          _this.self.jqData = _this.data;
+          return _this;
+        },
+        get(key){
+          return _this.data[key];
+        }
+      }
+      this.data.init();
       this.update();
       return this;
     },
