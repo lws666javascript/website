@@ -13,7 +13,7 @@
     <h1>反应力小测试</h1>
     <div id="point"></div>
     <div id="introduce">点击开始按钮后，页面中会出现若干个圆点，然后迅速消失，测试时长为20s，结束后统计在规定时间内点击到的圆点数量</div>
-    选择难度(数字越低越难):<input type="range" id="difficulty" min="0.4" max="1.5" step="0.1"><label for="difficulty">当前难度：</label>
+    选择难度(数字越低越难):<input type="range" name="difficulty" id="difficulty" min="0.4" max="1.5" step="0.1"><label for="difficulty">当前难度：</label>
     <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
     <div id="test-page" class="center"></div>
@@ -24,6 +24,7 @@
       const DIFFICULTY = jq("#difficulty");
       BUTTON.bind("click",function(){
         let difficulty = DIFFICULTY.value;
+        console.log(difficulty)
         PAGE.css({display:'block'});
         let count = 0;
         document.onclick = function(e){
