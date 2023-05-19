@@ -11,7 +11,7 @@
   <body>
     <h1>反应力小测试</h1>
     <siv id="point"></div>
-    <div id="introduce">点击开始按钮后，页面中会出现若干个圆点，然后迅速消失，测试时长为30s，结束后统计在规定时间内点击到的圆点数量</div>
+    <div id="introduce">点击开始按钮后，页面中会出现若干个圆点，然后迅速消失，测试时长为20s，结束后统计在规定时间内点击到的圆点数量</div>
     <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
     <div id="test-page" class="center"></div>
@@ -29,7 +29,7 @@
           }
         }
         let timer = setInterval(function(){
-          let num = random.randInt(1,5);
+          let num = random.randInt(1,3);
           for(let i=0;i<num;i++){
             let p = jq.create("div",{class:"circle"});
             let r1 = random.randInt(20,100);
@@ -40,6 +40,7 @@
                 b = random.randInt(0,255);
             p.css({backgroundColor:`rgb(${r},${g},${b})`});
             PAGE.append(p);
+            setTimeout(function(){p.remove()},500)
           }
           
         },1000)
@@ -47,7 +48,7 @@
           clearInterval(timer);
           PAGE.css({display:'none'});
           jq("#point").set({inner:`您的分数：${count}`})
-        },30000);
+        },20000);
       });
       
     </script>
