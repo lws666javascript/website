@@ -30,7 +30,8 @@
     <script>
       jq("#subCode").bind("click",function(){
         try{
-          let code = jq("#code").self.value;
+          let ele = jq("#code").self,
+              code = ele.value;
           if(/^html:/.test(code)){
             let d = jq.create("div");
             d.inner = code.replace(/^html:/,"");
@@ -40,6 +41,9 @@
             let result = eval(code);
             alert(result);
             console.log(result);
+          }
+          if(/\\clear\\/.test(code)){
+            ele.value = "";
           }
         }catch(e){
           console.log(e);
