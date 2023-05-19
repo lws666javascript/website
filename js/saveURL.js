@@ -1,9 +1,8 @@
 let ls = localStorage;
 ls.savedURL = ls.savedURL || "[]";
-try{
 function saveURL(url){
   let URL = JSON.parse(ls.savedURL),
-      murl = url.replace(/\.*\/g,""),
+      murl = url.replace(/\\.*\\/g,""),
       reg = new RegExp(murl);
   function query(v){
     return reg.test(v);
@@ -41,4 +40,3 @@ const setURL = {
     return r.codeTest(url);
   }
 }
-}catch(e){alert(e.stack)}
