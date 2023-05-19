@@ -36,10 +36,17 @@ function jq(ele){
     set(o){
       //设置属性
       let s = this.self;
-      s.id = o && o.id || this.id;
-      s.className = o && o.className || this.class;
-      s.innerHTML = o && o.inner || this.inner;
-      s.value = o && o.value || this.value;
+      if(o){
+        this.id = o.id || this.id;
+        this.class = o.class || this.class;
+        this.inner = o.inner || this.inner;
+        this.value = o.value || this.value;
+        this.set();
+      }
+      s.id = this.id;
+      s.className = this.class;
+      s.innerHTML = this.inner;
+      s.value = this.value;
       //每次返回this，便于链式调用
       return this;
     },
