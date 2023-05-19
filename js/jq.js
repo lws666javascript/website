@@ -22,6 +22,7 @@ function jq(ele){
     },
     toggleClass(c){
       this.self.classList.toggle(c);
+      this.class = this.self.className;
       return this;
     },
     getStyle(){
