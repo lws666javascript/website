@@ -1,8 +1,10 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/scaleElement.css">
     <script src="../js/jq.js"></script>
     <script src="../js/random.js"></script>
+    <script src="scaleElement.js"></script>
     <style>#test-page{width:100%;height:100%;z-index:255;}</style>
   </head>
   <body>
@@ -11,5 +13,9 @@
     <button>开始！</button>
     <div class="back" onclick="history.back()">←</div>
     <div id="test-page" class="center"></div>
+    <script>
+      const PAGE = jq("#test-page");
+      
+    </script>
   </body>
 </html>
