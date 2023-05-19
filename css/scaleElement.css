@@ -21,3 +21,23 @@
   opacity:1;
   background-color:white;
 }
+.scale-page-close-btn{
+  position:absolute;
+  top:1%;
+  right:1%;
+  border:1px solid black;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  font-size:40px;
+  font-weight:bold;
+  line-height:50px;
+  text-align:center;
+  background-color:white;
+  color:black;
+}
+.scale-page-close-btn:hover{
+  background-color:black;
+  color:white;
+  box-shadow:0 0 70px rgba(10,10,10,.8);
+}
