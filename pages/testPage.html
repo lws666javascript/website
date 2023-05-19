@@ -33,7 +33,7 @@
           let code = jq("#code").self.value;
           if(/^html:/.test(code)){
             let d = jq.create("div");
-            d.inner = code;
+            d.inner = code.replace(/^html:/,"");
             d.set();
             jq.body.append(d);
           }else{
