@@ -21,9 +21,8 @@
     <script>
       const PAGE = jq("#test-page");
       const BUTTON = jq("button");
-      const DIFFICULTY = jq("#difficulty");
       BUTTON.bind("click",function(){
-        let difficulty = DIFFICULTY.value;
+        let difficulty = jq("#difficulty").value;
         console.log(difficulty)
         PAGE.css({display:'block'});
         let count = 0;
