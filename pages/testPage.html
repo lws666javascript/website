@@ -31,17 +31,16 @@
       jq("#subCode").bind("click",function(){
         try{
           let ele = jq("#code").self,
-              cd = ele.value;
+              cd = ele.value,
+              code = cd.replace("//clear//","");
           if(/^html:/.test(cd)){
-            let code = cd.replace("\\clear\\","");
             let d = jq.create("div");
             d.inner = code.replace(/^html:/,"");
             d.set();
             jq.body.append(d);
           }else{
-            let code = cd.replace("\\clear\\","");
             let result = eval(code);
-            alert(result);
+            if(!/\\noAlert\\/.test(cd))alert(result);
             console.log(result);
           }
           if(/\\clear\\/.test(cd)){
