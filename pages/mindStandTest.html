@@ -23,7 +23,7 @@
       function loadingRow(){
         let r = jq(".loadingRow div"),
             n = jq("h2 span");
-        r.Data.set("a",0);
+        r.data.a || r.Data.set("a",0);
         let p = r.parent();
         if(r.w <= p.w*0.3){
           r.resize([r.w+1+"px"]);
