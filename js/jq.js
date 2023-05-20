@@ -108,7 +108,6 @@ function jq(ele){
     animation(f){
       function anm(t,f){
         if(f(t)){
-          f(t);
           requestAnimationFrame(function(){
             anm(t,f);
           });
@@ -122,7 +121,7 @@ function jq(ele){
     setInterval(f,t){
       let timer = setInterval(function(){
         if(f(this)){
-          f(this);
+          
         }else{
           clearInterval(timer);
         }
@@ -212,6 +211,24 @@ jq.get = function(){
     jqEle.push(jq(v));
   }
   return jqEle;
+}
+jq.animation = function(f){
+  let timer  = requestAnimationFrame(function(){
+    if(f()){
+      requestAnimationFrame(arguments.callee);
+    }
+  });
+  return timer;
+}
+jq.setInterval = function(f,t){
+  let timer = setInterval(function(t){
+    if(f()){
+      
+    }else{
+      clearInterval(timer);
+    }
+  },t);
+  return timer;
 }
 //常用元素的引用
 window.addEventListener("load",function(){
