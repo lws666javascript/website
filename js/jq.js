@@ -234,6 +234,10 @@ jq.animation = {
     this.funs.splice(i,1);
     return this;
   },
+  clear(){
+    this.funs = [function(){}];
+    return this;
+  },
   stop(){
     cancelAnimationFrame(this.timer);
     return this;
@@ -251,6 +255,7 @@ jq.interval = {
   },
   add:jq.animation.add,
   remove:jq.animation.remove,
+  clear:jq.animation.clear,
   stop(){
     clearInterval(this.timer);
     return this;
