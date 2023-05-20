@@ -120,13 +120,13 @@ function jq(ele){
       return this;
     },
     setInterval(f,t){
-      let timer = setInterval(function(t){
-        if(f(t)){
-          f(t);
+      let timer = setInterval(function(){
+        if(f(this)){
+          f(this);
         }else{
           clearInterval(timer);
         }
-      }.bind(this),time)
+      }.bind(this),t)
       return this;
     },
     css(o){
