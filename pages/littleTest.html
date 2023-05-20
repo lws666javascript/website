@@ -55,7 +55,7 @@
             let p = jq.create("div",{class:"circle"});
             let r1 = random.randInt(80,150);
             p.resize([r1,r1]);
-            p.move([random.randInt(0+"px",PAGE.w-p.w),random.randInt(0+"px",PAGE.h-p.h)]);
+            p.move([random.randInt(0,PAGE.w-p.w),random.randInt(0,PAGE.h-p.h)]);
             console.log(PAGE.size,p.size)
             let r = random.randInt(0,255),
                 g = random.randInt(0,255),
