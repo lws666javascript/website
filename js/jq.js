@@ -240,7 +240,9 @@ jq.animation = {
     return this;
   },
   remove(f){
-    
+    let i = this.funs.indexOf(f);
+    this.funs.splice(i,1);
+    return this;
   },
   stop(){
     cancelAnimationFrame(this.timer);
