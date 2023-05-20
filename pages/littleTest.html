@@ -36,7 +36,6 @@
             if(!j.data.state){
               j.animation(function(t){
                 if(t.w < 1.5*w){
-                  t.Data.set("state",1)
                   t.resize([t.w+5+"px",t.w+5+"px"]);
                   return true;
                 }else{
@@ -45,6 +44,7 @@
                   return false;
                 }
               });
+              j.Data.set("state",1);
             }
           }
         }
