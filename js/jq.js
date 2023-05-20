@@ -22,7 +22,7 @@ function jq(ele){
         set:this.self.setAttribute,
         remove:this.self.setAttribute
       };
-      this.data = {
+      this.Data = {
         init(){
           _this.self.jqData = _this.self.jqData || {};
           _this.data = _this.self.jqData;
@@ -49,7 +49,7 @@ function jq(ele){
           return _this.data[key];
         }
       }
-      this.data.init();
+      this.Data.init();
       this.update();
       return this;
     },
