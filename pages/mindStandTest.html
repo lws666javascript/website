@@ -28,9 +28,9 @@
       anm.start();
       function loadingRow(){
         let r = jq(".loadingRow>div"),
-            n = jq("h2 span");
-        let a = Math.round(r.w/p.w*100,2);
-        let p = r.parent();
+            n = jq("h2 span"),
+            p = r.parent();
+        let a = Math.round((r.w/p.w*100),2);
         if(r.w <= p.w*0.3){
           r.resize([r.w+1+"px"]);
           n.set({inner:a+"%"})
