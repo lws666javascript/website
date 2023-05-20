@@ -219,7 +219,7 @@ jq.animation = {
       for(let v of this.funs){
         v();
       }
-      this.timer = requestAnimationFrame(arguments.callee);
+      this.timer = requestAnimationFrame(arguments.callee.bind(this));
     }.bind(this));
     return this;
   },
