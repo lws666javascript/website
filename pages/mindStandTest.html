@@ -36,9 +36,10 @@
           n.set({inner:a+"%"})
         }else if(r.w > 0.3*p.w && r.w < 0.99 * p.w){
           r.resize([r.w+5+"px"]);
-          n.set({inner:`${a}%`})
+          n.set({inner:`${a}%`});
         }else if(r.w < p.w){
-            r.resize([r.w+0.1+"px"]);
+            r.resize([r.w+1+"px"]);
+            console.log(r.w)
             n.set({inner:a+"%"})
         }else{
           anm.remove(loadingRow);
