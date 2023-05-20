@@ -60,8 +60,10 @@
             PAGE.append(p);
             setTimeout(function(){p.self&&p.remove()},difficulty*1000);
             if(PAGE.G_OPEN){
-              p.remove();
-              count++;
+              setTimeout(function(){
+                p.remove();
+                count++;
+              },difficulty*100);
             }
           }          
         },1000)
