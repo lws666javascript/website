@@ -213,7 +213,7 @@ jq.get = function(){
 
 //jq.animation 子模块
 jq.animation = {
-  funs:[],
+  funs:[function(){}],
   start(){
     this.timer  = requestAnimationFrame(function(){
       for(let v of this.funs){
@@ -239,7 +239,23 @@ jq.animation = {
     return this;
   }
 }
-
+jq.interval = {
+  funs:[function(){}],
+  start(time){
+    this.time = time || 100;
+    this.timer = setInterval(function(){
+      for(let v of this.funs){
+        v();
+      }
+    }.bind(this),this.time);
+  },
+  add:jq.animation.add,
+  remove:jq.animation.remove,
+  stop(){
+    clearInterval(this.timer);
+    return this;
+  }
+}
 //常用元素的引用
 window.addEventListener("load",function(){
   jq.body = jq(document.body);
