@@ -205,6 +205,14 @@ jq.create = function(tag,o){
   o && o.css && j.css(o.css);
   return j;
 }
+jq.all = function(txt){
+  let arr = document.querySelectorAll(text);
+  let r = [];
+  for(let v of arr){
+    r.push(jq(v));
+  }
+  return r;
+}
 jq.get = function(){
   let jqEle = [];
   for(let v of arguments){
