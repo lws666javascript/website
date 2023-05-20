@@ -13,15 +13,18 @@ function jq(ele){
       this.id = this.self.id;
       this.class = this.self.className;
       this.inner = this.self.innerHTML;
+      //实时更新value
       this.bind("input",function(){
         this.value = this.self.value;
       });
       this.value = this.self.value;
+      //属性操作
       this.attribute = {
         get:this.self.getAttribute,
         set:this.self.setAttribute,
         remove:this.self.setAttribute
       };
+      //存储数据，存储在DOM元素内，具有唯一性
       this.Data = {
         init(){
           _this.self.jqData = _this.self.jqData || {};
@@ -54,11 +57,13 @@ function jq(ele){
       return this;
     },
     toggleClass(c){
+      //改变class
       this.self.classList.toggle(c);
       this.class = this.self.className;
       return this;
     },
     getStyle(){
+      //获取元素样式
       let c = getComputedStyle(this.self);
       let o = {};
       for(let i in c){
