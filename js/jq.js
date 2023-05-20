@@ -241,6 +241,11 @@ jq.animation = {
   stop(){
     cancelAnimationFrame(this.timer);
     return this;
+  },
+  destroy(){
+    this.clear();
+    this.stop();
+    return this;
   }
 }
 jq.interval = {
@@ -259,7 +264,8 @@ jq.interval = {
   stop(){
     clearInterval(this.timer);
     return this;
-  }
+  },
+  destroy:jq.animation.destroy
 }
 //常用元素的引用
 window.addEventListener("load",function(){
