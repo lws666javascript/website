@@ -33,16 +33,19 @@
           if(t.className === "circle"){
             let j = jq(t);
             let w = j.w;
-            j.animation(function(t){
-              if(t.w < 1.5*w){
-                t.resize([t.w+5+"px",t.w+5+"px"]);
-                return true;
-              }else{
-                t.remove();
-                count++;
-                return false;
-              }
-            });
+            if(j.data.state){
+              j.animation(function(t){
+                if(t.w < 1.5*w){
+                  t.resize([t.w+5+"px",t.w+5+"px"]);
+                  return true;
+                }else{
+                  t.data.set("state",1);
+                  t.remove();
+                  count++;
+                  return false;
+                }
+              });
+            }
           }
         }
         document.onclick = document.ontouchstart;
