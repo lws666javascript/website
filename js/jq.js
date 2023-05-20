@@ -118,16 +118,6 @@ function jq(ele){
       }.bind(this));
       return this;
     },
-    setInterval(f,t){
-      let timer = setInterval(function(){
-        if(f(this)){
-          
-        }else{
-          clearInterval(timer);
-        }
-      }.bind(this),t)
-      return this;
-    },
     css(o){
       //css样式修改
       let s = this.self;
