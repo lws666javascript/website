@@ -2,8 +2,40 @@
   <head>
     <link rel="stylesheet" href="../css/common.css" />
     <script src="../js/jq.js"></script>
+    <style>
+      .loading{width:100vw;height:100vh;background-color:white;}
+      .loading loadingRow{width:80vw;height:10vh;background-color:black;border:2px solid skyblue;
+      border-radius:5vh;overflow:hidden;
+      }
+      .loadingRow div{background-color:yellow;width:0;height:100%;}
+    </style>
   </head>
   <body>
+    <div class="loading center">
+      <div class="loadingRow center"><div></div></div>
+      <h2>加载中,请稍候......</h2>
+    </div>
     <div class="back" onclick="history.back()">←</div>
+    <script>
+      const anm = jq.animation;
+      anm.start();
+      function loadingRow(){
+        let r = jq(".loadingRow div"),
+            p = r.parent();
+        if(r.w <= p.w*0.3){
+          r.resize([r.w+1+"px"]);
+        }else if(r.w > 0.3*p.w && r.w < 0.99 * p.w){
+          r.resize([r.w+5+"px"]);
+        }else if(r.w <= p.w){
+          setTimeout(function(){
+            r.resize([r.w+0.1+"px"]);
+          },10000);
+        }else{
+          anm.remove(loadingRow);
+          alert("加载完成！")
+        }
+      }
+      anm.add(loadingRow);
+    </script>
   </body>
 </html>
