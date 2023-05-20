@@ -3,8 +3,9 @@
     <link rel="stylesheet" href="../css/common.css" />
     <script src="../js/jq.js"></script>
     <style>
+      *{text-align:center}
       .loading{width:100vw;height:100vh;background-color:white;}
-      .loading loadingRow{width:80vw;height:10vh;background-color:black;border:2px solid skyblue;
+      .loading .loadingRow{width:80vw;height:10vh;background-color:black;border:2px solid skyblue;
       border-radius:5vh;overflow:hidden;
       }
       .loadingRow div{background-color:yellow;width:0;height:100%;}
@@ -13,7 +14,7 @@
   <body>
     <div class="loading center">
       <div class="loadingRow center"><div></div></div>
-      <h2>加载中,请稍候......</h2>
+      <h2>加载中<span>0%</span>,请稍候......</h2>
     </div>
     <div class="back" onclick="history.back()">←</div>
     <script>
@@ -21,14 +22,22 @@
       anm.start();
       function loadingRow(){
         let r = jq(".loadingRow div"),
+            n = jq("h2 span"),
+            a = 0;
             p = r.parent();
         if(r.w <= p.w*0.3){
           r.resize([r.w+1+"px"]);
-        }else if(r.w > 0.3*p.w && r.w < 0.99 * p.w){
+          a+=1;
+          n.set({inner:a+"%"})
+        }else if(r.w > 0.3*p.w && r.w < 0.9 * p.w){
           r.resize([r.w+5+"px"]);
-        }else if(r.w <= p.w){
+          a+=5;
+          n.set({inner:`${a}%`})
+        }else if(r.w < p.w){
           setTimeout(function(){
             r.resize([r.w+0.1+"px"]);
+            a+=0.1;
+            n.set({inner:a+"%"})
           },10000);
         }else{
           anm.remove(loadingRow);
