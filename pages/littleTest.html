@@ -39,10 +39,10 @@
                 return true;
               }else{
                 t.remove();
+                count++;
                 return false;
               }
-            })
-            count++;
+            });
           }
         }
         document.onclick = document.ontouchstart;
