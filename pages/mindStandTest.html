@@ -8,12 +8,18 @@
       .loading .loadingRow{width:80vw;height:10vh;background-color:black;border:2px solid skyblue;
       border-radius:5vh;overflow:hidden;
       }
-      .loadingRow div{background-color:yellow;width:0;height:100%;}
+      .loadingRow div{width:0;height:100%;}
+      .row1{background-color:yellow;}
+      .row2{background-color:skyblue;}
     </style>
   </head>
   <body>
     <div class="loading center">
-      <div class="loadingRow center"><div></div></div>
+      <div class="loadingRow center">
+        <div class="row1">
+          <div class="row2"></div>
+        </div>
+      </div>
       <h2>加载中<span>0%</span>,请稍候......</h2>
     </div>
     <div class="back" onclick="history.back()">←</div>
@@ -21,7 +27,7 @@
       const anm = jq.animation;
       anm.start();
       function loadingRow(){
-        let r = jq(".loadingRow div"),
+        let r = jq(".loadingRow>div"),
             n = jq("h2 span");
         let a = Math.round(r.w/p.w*100,2);
         let p = r.parent();
