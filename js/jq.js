@@ -212,24 +212,34 @@ jq.get = function(){
   }
   return jqEle;
 }
-jq.animation = function(f){
-  let timer  = requestAnimationFrame(function(){
-    if(f()){
+
+//jq.animation 子模块
+jq.animation = {
+  funs:[],
+  start(){
+    this.timer  = requestAnimationFrame(function(){
+      for(let v of this.funs){
+        v();
+      }
       requestAnimationFrame(arguments.callee);
     }
-  });
-  return timer;
-}
-jq.setInterval = function(f,t){
-  let timer = setInterval(function(t){
-    if(f()){
-      
-    }else{
-      clearInterval(timer);
+    return this;
+  },
+  add(){
+    for(let v of arguments){
+      this.funs.push(v);
     }
-  },t);
-  return timer;
+    return this;
+  },
+  remove(f){
+  
+  },
+  stop(){
+    cancelAnimationFrame(this.timer);
+    return this;
+  }
 }
+
 //常用元素的引用
 window.addEventListener("load",function(){
   jq.body = jq(document.body);
