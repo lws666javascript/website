@@ -22,22 +22,22 @@
       anm.start();
       function loadingRow(){
         let r = jq(".loadingRow div"),
-            n = jq("h2 span"),
-            a = 0;
-            p = r.parent();
+            n = jq("h2 span");
+        r.Data.set("a",0);
+        let p = r.parent();
         if(r.w <= p.w*0.3){
           r.resize([r.w+1+"px"]);
-          a+=1;
-          n.set({inner:a+"%"})
-        }else if(r.w > 0.3*p.w && r.w < 0.9 * p.w){
+          r.data.a+=1;
+          n.set({inner:r.data.a+"%"})
+        }else if(r.w > 0.3*p.w && r.w < 0.98 * p.w){
           r.resize([r.w+5+"px"]);
-          a+=5;
-          n.set({inner:`${a}%`})
+          r.data.a+=5;
+          n.set({inner:`${r.data.a}%`})
         }else if(r.w < p.w){
           setTimeout(function(){
             r.resize([r.w+0.1+"px"]);
-            a+=0.1;
-            n.set({inner:a+"%"})
+            r.data.a+=0.1;
+            n.set({inner:r.data.a+"%"})
           },10000);
         }else{
           anm.remove(loadingRow);
