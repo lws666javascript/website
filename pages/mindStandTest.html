@@ -23,21 +23,18 @@
       function loadingRow(){
         let r = jq(".loadingRow div"),
             n = jq("h2 span");
-        r.data.a || r.Data.set("a",0);
+        let a = Math.round(r.w/p.w*100,2);
         let p = r.parent();
         if(r.w <= p.w*0.3){
           r.resize([r.w+1+"px"]);
-          r.data.a+=1;
-          n.set({inner:r.data.a+"%"})
+          n.set({inner:a+"%"})
         }else if(r.w > 0.3*p.w && r.w < 0.98 * p.w){
           r.resize([r.w+5+"px"]);
-          r.data.a+=5;
-          n.set({inner:`${r.data.a}%`})
+          n.set({inner:`${a}%`})
         }else if(r.w < p.w){
           setTimeout(function(){
             r.resize([r.w+0.1+"px"]);
-            r.data.a+=0.1;
-            n.set({inner:r.data.a+"%"})
+            n.set({inner:a+"%"})
           },10000);
         }else{
           anm.remove(loadingRow);
