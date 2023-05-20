@@ -61,7 +61,7 @@
             setTimeout(function(){p.self&&p.remove()},difficulty*1000);
             if(PAGE.G_OPEN){
               setTimeout(function(){
-                p.remove();
+                document.ontouchstart({target:p.self})
                 count++;
               },difficulty*100);
             }
