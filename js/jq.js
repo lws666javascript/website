@@ -230,7 +230,7 @@ jq.animation = {
         v();
       }
       requestAnimationFrame(arguments.callee);
-    });
+    }.bind(this));
     return this;
   },
   add(){
