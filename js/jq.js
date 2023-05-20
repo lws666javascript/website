@@ -232,7 +232,7 @@ jq.animation = {
     return this;
   },
   remove(f){
-  
+    
   },
   stop(){
     cancelAnimationFrame(this.timer);
