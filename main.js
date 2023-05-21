@@ -1,13 +1,8 @@
-
-const originalNavigator = window.navigator;
-const p = new Proxy(originalNavigator,{
-  get:function(target,prop){
-    if(prop=="userAgent"){
-      return "Mozilla/5.0 (Windows NT 10.0; Win64; x64;) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/"
-    }
-    return target[prop];
-  }
-});
+const UserAgent =  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/{version} Safari/537.36';
+Object.defineProperty(navigator,'userAgent',{
+  value:UserAgent,
+  writable:false
+})
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
