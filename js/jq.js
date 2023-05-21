@@ -257,12 +257,12 @@ jq.animation = {
   }
 }
 jq.interval = {
-  funs:[function(){}],
+  funs:{blank(){}},
   start(time){
     this.time = time || 100;
     this.timer = setInterval(function(){
-      for(let v of this.funs){
-        v();
+      for(let v in this.funs){
+        this.funs[v]()
       }
     }.bind(this),this.time);
   },
