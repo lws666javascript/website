@@ -218,29 +218,32 @@ jq.get = function(){
 
 //jq.animation 子模块
 jq.animation = {
-  funs:[function(){}],
+  funs:{
+    blank(){}
+  },
   start(){
     this.timer  = requestAnimationFrame(function(){
-      for(let v of this.funs){
-        v();
+      for(let v in this.funs){
+        this.funs[v]();
       }
       this.timer = requestAnimationFrame(arguments.callee.bind(this));
     }.bind(this));
     return this;
   },
-  add(){
-    for(let v of arguments){
-      this.funs.push(v);
+  add(obj){
+    for(let v in obj){
+      this.funs[v] = obj[v];
     }
     return this;
   },
   remove(f){
-    let i = this.funs.indexOf(f);
-    this.funs.splice(i,1);
+    delete this.funs[f]; 
     return this;
   },
   clear(){
-    this.funs = [function(){}];
+    this.funs = {
+      blank(){}
+    };
     return this;
   },
   stop(){
