@@ -3,3 +3,6 @@
   50%{opacity:1}
   to{opacity:0}
 }
+.loadingPage{
+  animation:fade-in-out 3s 1 linear forwards;
+}
