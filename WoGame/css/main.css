@@ -1,3 +1,12 @@
+@viewport{
+  orientation:landscape;
+}
 html{
   transform:rotate(90deg);
+  width:100vh;
+  height:100vw;
+  overflow-x:hidden;
+  position:absolute;
+  top:100%;
+  left:0;
 }
