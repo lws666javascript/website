@@ -7,6 +7,8 @@ html{
   height:100vh;
   overflow-x:hidden;
   position:absolute;
+  left:-212px;
+  top:212px;
 }
 #loadingPage{
   index:0;
