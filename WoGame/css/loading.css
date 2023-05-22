@@ -6,3 +6,9 @@
 .loadingPage{
   animation:fade-in-out 3s 1 linear forwards;
 }
+.loadingPage h1{
+  text-align:center;
+  font-size:40px;
+  height:40px;
+  width:100%;
+}
