@@ -3,12 +3,10 @@
 }
 html{
   transform:rotate(90deg);
-  width:100vh;
-  height:100vw;
+  width:auto;
+  height:auto;
   overflow-x:hidden;
   position:absolute;
-  top:0;
-  left:0;
 }
 #loadingPage{
   index:0;
