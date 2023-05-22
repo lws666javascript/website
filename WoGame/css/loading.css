@@ -1,7 +1,7 @@
 @keyframes fade-in-out(){
   from{opacity:0}
   50%{opacity:1}
-  to{opacity:0}
+  to{opacity:0;display:none;}
 }
 .loadingPage{
   animation:fade-in-out 3s 1 linear forwards;
