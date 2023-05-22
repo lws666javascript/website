@@ -10,3 +10,12 @@ html{
   top:0;
   left:0;
 }
+#loadingPage{
+  index:0;
+}
+#homePage{
+  index:1;
+}
+#gamePage{
+  index:2;
+}
