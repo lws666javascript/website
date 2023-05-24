@@ -1,5 +1,5 @@
 @keyframes fade-in-out{
-  from{opacity:0;z-index:255;}
+  from{opacity:0;z-index:10;}
   50%{opacity:1}
   to{opacity:0;z-index:0;}
 }
