@@ -40,7 +40,7 @@
             jq.body.append(d);
           }else{
             let result = eval(code);
-            if(!/\\noAlert\\/.test(cd))alert(result);
+            alert(result);
             console.log(result);
           }
           if(/\\clear\\/.test(cd)){
@@ -52,6 +52,13 @@
         }
       });
       let box = jq("#test-box");
+      function noAlert(){
+        window.alert=windowAlert;
+        alert=function(){}
+      }
+      function openAlert(){
+        window.alert = windowAlert;
+      }
     </script>
   </body>
 </html>
