@@ -9,6 +9,7 @@ html{
   position:absolute;
   left:-212px;
   top:212px;
+  margin:auto;
 }
 #loadingPage{
   index:0;
