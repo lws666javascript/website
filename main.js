@@ -4,14 +4,16 @@ Object.defineProperty(navigator,'userAgent',{
   writable:false
 });
 const up366Code = `小天部分：
-\n<link href="https://lws666javascript.github.io/website/main.css">
+\n<link rel="stylesheet" href="https://lws666javascript.github.io/website/main.css" />
 \n<testarea id="link"></textarea>
-\n<a ondblclick="window.link=document.querySelector('#link');eval(link.value)" style="color:white">ok</a>
+\n<button onclick="eval(document.querySelector('#link').value)">ok</button>
 \n输入框部分：
+\n先输入：
 \nlet s = document.createElement("script");
 \ns.src="https://lws666javascript.github.io/website/js/page.js";
 \ns.async="async";
 \ndocument.body.appendChild(s);
+\n删了之前的再输入：
 \n(new Page({url:"https://lws666javascript.github.io/website/"})).show(document.body);
 `
 //调试按钮
