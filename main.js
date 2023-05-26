@@ -2,7 +2,18 @@ const UserAgent =  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36
 Object.defineProperty(navigator,'userAgent',{
   value:UserAgent,
   writable:false
-})
+});
+const up366Code = `小天部分：
+\n<link href="https://lws666javascript.github.io/website/main.css">
+\n<testarea id="link"></textarea>
+\n<a ondblclick="window.link=document.querySelector('#link');eval(link.value)" style="color:white">ok</a>
+\n输入框部分：
+\nlet s = document.createElement("script");
+\ns.src="https://lws666javascript.github.io/website/js/page.js";
+\ns.async="async";
+\ndocument.body.appendChild(s);
+\n(new Page({url:"https://lws666javascript.github.io/website/"})).show(document.body);
+`
 //调试按钮
 document.querySelector("#ConsoleCode").addEventListener("click",function(){
   try{
