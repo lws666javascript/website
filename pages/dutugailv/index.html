@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <script src="js/canvas.min.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css" media="all">
+      *{
+        margin: 0;
+        padding: 0;
+      
+      }
+      button{
+        display: block;
+        height: 10vh;
+        width: 100vw;
+        outline:none;
+      }
+    </style>
+</head>
+
+<body>
+  <h1>笨蛋，你还剩<span id="ys">100</span>原石哦</h1>
+  <button id="du">我要开赌了！</button>
+  <img src="1.gif" alt="" />
+  <script type="text/javascript" charset="utf-8">
+    const d = document.querySelector('#du'),
+    yss = document.querySelector('#ys');
+    ys=+yss.innerHTML;
+    du.onclick = function(){
+      let r = Math.random();//生成0-1的随机数
+      if(r < 0.5){
+        ys-=ys*0.5;
+      }else{
+        ys+=0.8*ys;
+      }
+      if(ys <1){
+        alert('别试了！不可能赚的啦')
+      }
+      yss.innerHTML = Math round(ys)+'';
+    }
+  </script>
+</body>
+
+</html>
